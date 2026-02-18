@@ -1,257 +1,330 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تقييم مجاني</title>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Trainers Academy — Application</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      /* Change these 3 if you want to match logo colors perfectly */
+      --primary: #111827;   /* deep navy */
+      --accent:  #f59e0b;   /* warm gold */
+      --bg1:     #0f172a;   /* dark gradient */
     }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, rgba(224,116,50,0.6), rgba(30,112,199,0.6));
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column;
-      direction: rtl;
-      text-align: right;
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{
+      font-family: "Montserrat", sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(245,158,11,.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(59,130,246,.18), transparent 55%),
+        linear-gradient(145deg, var(--bg1), #020617);
+      color:#0b1220;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.85);
+    .wrap{
+      width:min(760px, 100%);
+      display:grid;
+      gap:14px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.35);
       border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 500px;
-      width: 90%;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease forwards;
-      backdrop-filter: blur(8px);
+      padding: 28px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
     }
 
-    @keyframes fadeIn {
-      0% {opacity: 0; transform: translateY(-20px);}
-      100% {opacity: 1; transform: translateY(0);}
+    .top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:10px;
     }
 
-    .logo {
-      display: block;
-      margin: 0 auto 30px auto;
-      width: 300px;
-      max-width: 90%;
-      height: auto;
-      transition: transform 0.3s ease;
+    .logo{
+      width: 76px;
+      height: 76px;
+      border-radius: 16px;
+      object-fit: contain;
+      background: rgba(0,0,0,0.04);
+      padding:10px;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
-    .logo:hover {
-      transform: scale(1.05);
+    h1{
+      font-size: 22px;
+      line-height:1.2;
+      color: var(--primary);
     }
-
-    h1 {
-      font-family: 'Alfa Slab One', cursive;
-      color: #1e70c7;
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 26px;
-      line-height: 1.5;
-    }
-
-    form label {
-      font-weight: 500;
-      color: #1e70c7;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    form input, form select {
-      width: 100%;
-      padding: 14px 16px;
-      margin-bottom: 18px;
-      border: 1px solid #1e70c7;
-      border-radius: 12px;
-      font-size: 16px;
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #555;
-      text-align: right;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-    }
-
-    form input:focus, form select:focus {
-      border-color: #e07432;
-      box-shadow: 0 6px 15px rgba(224,116,50,0.3);
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    #telephone {
-      direction: ltr;
-      text-align: right;
-    }
-
-    button {
-      width: 100%;
-      padding: 16px;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      background-color: #1e70c7;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    button:hover {
-      transform: translateY(-3px) scale(1.02);
-      background-color: #155a9a;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .thank-you {
-      display: none;
-      text-align: center;
-      color: #1e70c7;
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 20px;
-      line-height: 1.8;
-    }
-
-    .disclaimer {
-      margin-top: 25px;
+    .sub{
+      margin-top:6px;
       font-size: 13px;
-      text-align: center;
-      color: #fff;
-      max-width: 500px;
-      line-height: 1.6;
-      padding: 10px;
-      direction: rtl;
+      line-height: 1.5;
+      color: #334155;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 25px 20px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-      .logo {
-        width: 160px;
-      }
-      .disclaimer {
-        font-size: 12px;
-      }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    label{
+      display:block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 8px 0 6px;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(15,23,42,0.18);
+      background: rgba(255,255,255,0.95);
+      font-size: 15px;
+      outline:none;
+      transition: .18s ease;
+    }
+
+    textarea{ min-height: 110px; resize: vertical; }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(245,158,11,0.9);
+      box-shadow: 0 0 0 4px rgba(245,158,11,0.18);
+    }
+
+    .full{ grid-column: 1 / -1; }
+
+    .error{
+      display:none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(239, 68, 68, 0.10);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      color: #7f1d1d;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .btn{
+      margin-top: 14px;
+      width:100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), #fb7185);
+      color: #0b1220;
+      font-weight: 800;
+      font-size: 16px;
+      cursor:pointer;
+      box-shadow: 0 12px 30px rgba(245,158,11,0.22);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); filter: brightness(1.02); }
+    .btn:disabled{ opacity:0.6; cursor:not-allowed; transform:none; }
+
+    .thank{
+      display:none;
+      margin-top: 10px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: rgba(34,197,94,0.10);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: #14532d;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align:center;
+    }
+
+    .footer{
+      text-align:center;
+      color: rgba(255,255,255,0.75);
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 720px){
+      .grid{ grid-template-columns: 1fr; }
+      .logo{ width:68px; height:68px; }
+      .card{ padding: 20px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <img src="les concepteur.png" alt="شعار" class="logo">
-    <h1>املأ معلوماتك للحصول على تقييم مجاني</h1>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <img class="logo" src="Elite%20Trainers%20Academy.png" alt="Elite Trainers Academy Logo">
+        <div>
+          <h1>Elite Trainers Academy</h1>
+          <div class="sub">Fill this application to be contacted by our team. Serious requests only.</div>
+        </div>
+      </div>
 
-    <form id="form">
-      <label for="nom">الاسم الكامل</label>
-      <input type="text" id="nom" name="nom" placeholder="اكتب اسمك الكامل" required>
+      <div class="error" id="errorBox"></div>
 
-      <label for="email">البريد الإلكتروني</label>
-      <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+      <form id="form">
+        <div class="grid">
+          <div>
+            <label for="nom">Full name *</label>
+            <input id="nom" name="nom" type="text" required placeholder="Your name">
+          </div>
 
-      <label for="telephone">رقم الهاتف</label>
-      <input type="tel" id="telephone" name="telephone" placeholder="اكتب رقم هاتفك" required>
+          <div>
+            <label for="whatsapp">WhatsApp number *</label>
+            <input id="whatsapp" name="whatsapp" type="tel" required placeholder="+213xxxxxxxxx">
+          </div>
 
-      <label for="age">العمر</label>
-      <select id="age" name="age" required>
-        <option value="" disabled selected>اختر عمرك</option>
-        <option value="18-25">من 18 إلى 25 سنة</option>
-        <option value="26-30">من 26 إلى 30 سنة</option>
-        <option value="31-35">من 31 إلى 35 سنة</option>
-        <option value="36-40">من 36 إلى 40 سنة</option>
-        <option value="40+">أكثر من 40 سنة</option>
-      </select>
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="you@email.com">
+          </div>
 
-      <label for="statut">الحالة الاجتماعية</label>
-      <select id="statut" name="statut" required>
-        <option value="" disabled selected>اختر حالتك الاجتماعية</option>
-        <option value="celibataire">أعزب / عزباء</option>
-        <option value="marie">متزوج / متزوجة</option>
-      </select>
+          <div>
+            <label for="niveau">Level</label>
+            <select id="niveau" name="niveau">
+              <option value="" selected>Choose</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+              <option>Professional</option>
+            </select>
+          </div>
 
-      <label for="niveau">المستوى الدراسي</label>
-      <select id="niveau" name="niveau" required>
-        <option value="" disabled selected>اختر مستواك الدراسي</option>
-        <option value="baccalaureat">بكالوريا</option>
-        <option value="diplome_pro">شهادة مهنية</option>
-        <option value="licence">ليسانس</option>
-        <option value="master">ماستر</option>
-        <option value="doctorat">دكتوراه</option>
-      </select>
+          <div class="full">
+            <label for="objectif">Main goal *</label>
+            <select id="objectif" name="objectif" required>
+              <option value="" selected disabled>Choose</option>
+              <option>Personal coaching</option>
+              <option>Become a trainer</option>
+              <option>Join an academy program</option>
+              <option>Nutrition plan</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-      <label for="experience">عدد سنوات الخبرة المهنية</label>
-      <select id="experience" name="experience" required>
-        <option value="" disabled selected>اختر خبرتك المهنية</option>
-        <option value="0-2">من 0 إلى سنتين</option>
-        <option value="3-5">من 3 إلى 5 سنوات</option>
-        <option value="6-10">من 6 إلى 10 سنوات</option>
-        <option value="10+">أكثر من 10 سنوات</option>
-      </select>
+          <div class="full">
+            <label for="message">Tell us about your objective *</label>
+            <textarea id="message" name="message" required placeholder="Explain what you want to achieve..."></textarea>
+          </div>
 
-      <!-- ✅ New field before budget -->
-      <label for="profession">المهنة / الوظيفة</label>
-      <input type="text" id="profession" name="profession" placeholder="اكتب مهنتك الحالية" required>
+          <!-- Tracking hidden fields -->
+          <input type="hidden" name="landing_url" id="landing_url">
+          <input type="hidden" name="referrer" id="referrer">
+          <input type="hidden" name="traffic_source" id="traffic_source">
 
-      <label for="budget">الميزانية التقريبية</label>
-      <select id="budget" name="budget" required>
-        <option value="" disabled selected>اختر ميزانيتك</option>
-        <option value="8-15">من 8 ملايين إلى 15 مليون</option>
-        <option value="15-30">من 15 مليون إلى 30 مليون</option>
-        <option value="30-50">من 30 مليون إلى 50 مليون</option>
-        <option value="50+">أكثر من 50 مليون</option>
-      </select>
+          <input type="hidden" name="utm_source" id="utm_source">
+          <input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign">
+          <input type="hidden" name="utm_content" id="utm_content">
+          <input type="hidden" name="utm_term" id="utm_term">
+          <input type="hidden" name="utm_id" id="utm_id">
+          <input type="hidden" name="fbclid" id="fbclid">
 
-      <button type="submit">احجز استشارتك المجانية</button>
-    </form>
+          <div class="full">
+            <button class="btn" id="submitBtn" type="submit">Submit Application</button>
+          </div>
+        </div>
+      </form>
 
-    <div class="thank-you" id="thankYou">
-      ✅ شكراً لك! تم إرسال النموذج بنجاح.<br>
-      سنتواصل معك قريباً جداً.<br>
-      سيتم تحويلك إلى واتساب خلال لحظات...
+      <div class="thank" id="thankYou">
+        ✅ Application received successfully.<br/>
+        We will contact you shortly.
+      </div>
+    </div>
+
+    <div class="footer">
+      © Elite Trainers Academy — This form is for applications only.
     </div>
   </div>
 
-  <p class="disclaimer">
-    نحن لسنا تابعين لأي قنصلية أو سفارة ولا نصدر أي تأشيرات.
-  </p>
-
   <script>
-    const form = document.getElementById('form');
-    const thankYou = document.getElementById('thankYou');
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwkWQ0ghNKIq-WYxqMe_9hANuLsazSDbOq8aqlGQYgG5Ouny0GWHMMdPv_hi6KZOFMgdg/exec";
+    const form = document.getElementById("form");
+    const thankYou = document.getElementById("thankYou");
+    const errorBox = document.getElementById("errorBox");
+    const submitBtn = document.getElementById("submitBtn");
 
-    form.addEventListener('submit', async (e) => {
+    // ✅ YOUR APPS SCRIPT WEB APP URL (/exec)
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxUVtHd5iUJXn72xerrs_NmyhYBw4X4Q_UCfQ8oSw0Hf_k6mpzQdvxeQ3en49DcVbFhmg/exec";
+
+    function showError(msg){
+      errorBox.textContent = msg;
+      errorBox.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Tracking capture
+    (function fillTracking(){
+      const qs = new URLSearchParams(window.location.search);
+      const setVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val || "";
+      };
+
+      setVal("landing_url", window.location.href);
+      setVal("referrer", document.referrer || "");
+
+      let source = "direct";
+      if (document.referrer) source = "referral";
+      if (qs.get("fbclid")) source = "facebook";
+
+      const us = (qs.get("utm_source") || "").toLowerCase();
+      if (us.includes("google")) source = "google";
+      if (us.includes("tiktok")) source = "tiktok";
+      if (us.includes("instagram")) source = "instagram";
+
+      setVal("traffic_source", source);
+
+      setVal("utm_source", qs.get("utm_source"));
+      setVal("utm_medium", qs.get("utm_medium"));
+      setVal("utm_campaign", qs.get("utm_campaign"));
+      setVal("utm_content", qs.get("utm_content"));
+      setVal("utm_term", qs.get("utm_term"));
+      setVal("utm_id", qs.get("utm_id"));
+      setVal("fbclid", qs.get("fbclid"));
+    })();
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(form);
+      errorBox.style.display = "none";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
 
       try {
-        await fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' });
-        form.style.display = 'none';
-        thankYou.style.display = 'block';
-        setTimeout(() => {
-          window.location.href = "https://wa.me/213540031289?text=مرحباً%20إلان%20إميغريشن%2C%20لقد%20أرسلت%20نموذج%20التقييم%20المجاني.";
-        }, 4000);
-      } catch (error) {
-        alert("حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت وأعد المحاولة.");
+        const formData = new FormData(form);
+
+        const res = await fetch(scriptURL, { method: "POST", body: formData });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+
+        form.style.display = "none";
+        thankYou.style.display = "block";
+      } catch (err) {
+        console.error(err);
+        showError("Submission failed. Please try again.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Application";
       }
     });
   </script>
