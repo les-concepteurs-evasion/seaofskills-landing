@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تقييم مجاني</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, rgba(224,116,50,0.6), rgba(30,112,199,0.6));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease forwards;
+      backdrop-filter: blur(8px);
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(-20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 30px auto;
+      width: 300px;
+      max-width: 90%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-family: 'Alfa Slab One', cursive;
+      color: #1e70c7;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+      line-height: 1.5;
+    }
+
+    form label {
+      font-weight: 500;
+      color: #1e70c7;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      border: 1px solid #1e70c7;
+      border-radius: 12px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #555;
+      text-align: right;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    form input:focus, form select:focus {
+      border-color: #e07432;
+      box-shadow: 0 6px 15px rgba(224,116,50,0.3);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    #telephone {
+      direction: ltr;
+      text-align: right;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      background-color: #1e70c7;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      background-color: #155a9a;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      color: #1e70c7;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .disclaimer {
+      margin-top: 25px;
+      font-size: 13px;
+      text-align: center;
+      color: #fff;
+      max-width: 500px;
+      line-height: 1.6;
+      padding: 10px;
+      direction: rtl;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 20px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .logo {
+        width: 160px;
+      }
+      .disclaimer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="les concepteur.png" alt="شعار" class="logo">
+    <h1>املأ معلوماتك للحصول على تقييم مجاني</h1>
+
+    <form id="form">
+      <label for="nom">الاسم الكامل</label>
+      <input type="text" id="nom" name="nom" placeholder="اكتب اسمك الكامل" required>
+
+      <label for="email">البريد الإلكتروني</label>
+      <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+
+      <label for="telephone">رقم الهاتف</label>
+      <input type="tel" id="telephone" name="telephone" placeholder="اكتب رقم هاتفك" required>
+
+      <label for="age">العمر</label>
+      <select id="age" name="age" required>
+        <option value="" disabled selected>اختر عمرك</option>
+        <option value="18-25">من 18 إلى 25 سنة</option>
+        <option value="26-30">من 26 إلى 30 سنة</option>
+        <option value="31-35">من 31 إلى 35 سنة</option>
+        <option value="36-40">من 36 إلى 40 سنة</option>
+        <option value="40+">أكثر من 40 سنة</option>
+      </select>
+
+      <label for="statut">الحالة الاجتماعية</label>
+      <select id="statut" name="statut" required>
+        <option value="" disabled selected>اختر حالتك الاجتماعية</option>
+        <option value="celibataire">أعزب / عزباء</option>
+        <option value="marie">متزوج / متزوجة</option>
+      </select>
+
+      <label for="niveau">المستوى الدراسي</label>
+      <select id="niveau" name="niveau" required>
+        <option value="" disabled selected>اختر مستواك الدراسي</option>
+        <option value="baccalaureat">بكالوريا</option>
+        <option value="diplome_pro">شهادة مهنية</option>
+        <option value="licence">ليسانس</option>
+        <option value="master">ماستر</option>
+        <option value="doctorat">دكتوراه</option>
+      </select>
+
+      <label for="experience">عدد سنوات الخبرة المهنية</label>
+      <select id="experience" name="experience" required>
+        <option value="" disabled selected>اختر خبرتك المهنية</option>
+        <option value="0-2">من 0 إلى سنتين</option>
+        <option value="3-5">من 3 إلى 5 سنوات</option>
+        <option value="6-10">من 6 إلى 10 سنوات</option>
+        <option value="10+">أكثر من 10 سنوات</option>
+      </select>
+
+      <!-- ✅ New field before budget -->
+      <label for="profession">المهنة / الوظيفة</label>
+      <input type="text" id="profession" name="profession" placeholder="اكتب مهنتك الحالية" required>
+
+      <label for="budget">الميزانية التقريبية</label>
+      <select id="budget" name="budget" required>
+        <option value="" disabled selected>اختر ميزانيتك</option>
+        <option value="8-15">من 8 ملايين إلى 15 مليون</option>
+        <option value="15-30">من 15 مليون إلى 30 مليون</option>
+        <option value="30-50">من 30 مليون إلى 50 مليون</option>
+        <option value="50+">أكثر من 50 مليون</option>
+      </select>
+
+      <button type="submit">احجز استشارتك المجانية</button>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      ✅ شكراً لك! تم إرسال النموذج بنجاح.<br>
+      سنتواصل معك قريباً جداً.<br>
+      سيتم تحويلك إلى واتساب خلال لحظات...
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    نحن لسنا تابعين لأي قنصلية أو سفارة ولا نصدر أي تأشيرات.
+  </p>
+
+  <script>
+    const form = document.getElementById('form');
+    const thankYou = document.getElementById('thankYou');
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwkWQ0ghNKIq-WYxqMe_9hANuLsazSDbOq8aqlGQYgG5Ouny0GWHMMdPv_hi6KZOFMgdg/exec";
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      try {
+        await fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' });
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+        setTimeout(() => {
+          window.location.href = "https://wa.me/213540031289?text=مرحباً%20إلان%20إميغريشن%2C%20لقد%20أرسلت%20نموذج%20التقييم%20المجاني.";
+        }, 4000);
+      } catch (error) {
+        alert("حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت وأعد المحاولة.");
+      }
+    });
+  </script>
+</body>
+</html>
