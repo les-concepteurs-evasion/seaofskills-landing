@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -7,26 +7,28 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elite Trainers Academy — Application</title>
+  <title>برنامج الـ Closing — Elite Trainers Academy</title>
+  <meta name="description" content="برنامج تدريب عملي على الـ Closing: مكالمات، اعتراضات، سكريبتات، وتطبيق واقعي. قدّم طلبك وراح نتواصل معاك." />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --primary:#111827;
+      --primary:#0b1220;
       --accent:#d1a44b;   /* gold */
       --navy:#20314f;     /* navy */
       --bg1:#0f172a;
+      --card: rgba(255,255,255,0.92);
+      --muted:#334155;
+      --line: rgba(15,23,42,0.14);
+      --ok: rgba(34,197,94,0.12);
+      --bad: rgba(239,68,68,0.12);
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:"Montserrat",sans-serif;
       min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+      padding:22px;
       background:
         radial-gradient(1200px 600px at 15% 10%, rgba(209,164,75,.22), transparent 60%),
         radial-gradient(900px 600px at 90% 20%, rgba(32,49,79,.22), transparent 55%),
@@ -34,60 +36,157 @@
       color:#0b1220;
     }
 
-    .wrap{width:min(760px,100%);display:grid;gap:14px}
+    .wrap{width:min(980px,100%);margin:0 auto;display:grid;gap:14px}
     .card{
-      background:rgba(255,255,255,0.93);
+      background:var(--card);
       border:1px solid rgba(255,255,255,0.35);
-      border-radius:20px;
-      padding:28px;
+      border-radius:22px;
+      padding:26px;
       box-shadow:0 18px 55px rgba(0,0,0,0.35);
       backdrop-filter: blur(10px);
     }
 
-    .top{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+    .top{display:flex;align-items:center;gap:14px}
     .logo{
-      width:76px;height:76px;border-radius:16px;
+      width:72px;height:72px;border-radius:16px;
       object-fit:contain;background:rgba(0,0,0,0.04);
       padding:10px;border:1px solid rgba(0,0,0,0.06);
+      flex:0 0 auto;
+    }
+    .brand h1{font-size:18px;line-height:1.2;color:var(--navy)}
+    .brand .sub{margin-top:6px;font-size:12.5px;line-height:1.55;color:var(--muted)}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap:18px;
+      margin-top:14px;
+      align-items:stretch;
+    }
+    .heroLeft{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-weight:800;
+      font-size:12px;
+      color:#0b1220;
+      background: rgba(209,164,75,0.22);
+      border:1px solid rgba(209,164,75,0.35);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .headline{
+      margin-top:12px;
+      font-size:26px;
+      line-height:1.15;
+      color:var(--primary);
+      font-weight:900;
+    }
+    .headline span{color:var(--navy)}
+    .lead{
+      margin-top:10px;
+      font-size:14px;
+      line-height:1.7;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .bullets{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+    .bullet{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(255,255,255,0.65);
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), #f6c56b);
+      margin-top:6px; flex:0 0 auto;
+    }
+    .bullet b{display:block;color:var(--primary);font-size:13px}
+    .bullet p{margin-top:4px;color:var(--muted);font-size:12.5px;line-height:1.55}
+
+    .heroRight{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(209,164,75,0.35);
+      background: linear-gradient(180deg, rgba(209,164,75,0.14), rgba(255,255,255,0.65));
+    }
+    .miniTitle{font-weight:900;color:var(--navy);font-size:14px}
+    .miniText{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.55}
+    .miniList{margin-top:10px;display:grid;gap:8px}
+    .miniItem{
+      font-size:12.5px;line-height:1.55;color:#0b1220;
+      background: rgba(255,255,255,0.65);
+      border:1px solid var(--line);
+      padding:10px 10px;border-radius:12px;
+      font-weight:700;
     }
 
-    h1{font-size:22px;line-height:1.2;color:var(--navy)}
-    .sub{margin-top:6px;font-size:13px;line-height:1.5;color:#334155}
+    .section{
+      margin-top:14px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+    .section h2{
+      font-size:16px;
+      color:var(--navy);
+      font-weight:900;
+    }
+    .section p{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+      font-weight:600;
+    }
 
-    .grid{
+    .grid2{
+      margin-top:12px;
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      margin-top:16px;
     }
-
-    label{
-      display:block;
-      font-size:13px;
-      font-weight:700;
-      color:#0f172a;
-      margin:8px 0 6px;
+    .box{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.7);
     }
-
-    input,select,textarea{
-      width:100%;
-      padding:13px 14px;
-      border-radius:12px;
-      border:1px solid rgba(15,23,42,0.18);
-      background:rgba(255,255,255,0.97);
-      font-size:15px;
-      outline:none;
-      transition:.18s ease;
+    .box h3{font-size:13px;color:var(--primary);font-weight:900}
+    .box ul{margin-top:10px;display:grid;gap:8px;list-style:none}
+    .box li{
+      display:flex;gap:10px;align-items:flex-start;
+      color:var(--muted);font-size:12.5px;line-height:1.55;font-weight:600;
     }
-
-    textarea{min-height:110px;resize:vertical}
-    input:focus,select:focus,textarea:focus{
-      border-color: rgba(209,164,75,0.9);
-      box-shadow: 0 0 0 4px rgba(209,164,75,0.18);
+    .tag{
+      font-size:11.5px;
+      padding:6px 8px;border-radius:999px;
+      border:1px solid var(--line);
+      display:inline-flex;gap:8px;align-items:center;
+      background: rgba(255,255,255,0.8);
+      color:#0b1220;font-weight:800;
     }
+    .ok{background:var(--ok);border-color:rgba(34,197,94,0.25)}
+    .bad{background:var(--bad);border-color:rgba(239,68,68,0.25)}
 
-    .full{grid-column:1/-1}
+    .divider{height:1px;background:rgba(15,23,42,0.12);margin:14px 0}
 
+    /* form */
     .error{
       display:none;
       margin-top:12px;
@@ -98,7 +197,40 @@
       color:#7f1d1d;
       font-size:13px;
       line-height:1.45;
+      font-weight:700;
     }
+
+    label{
+      display:block;
+      font-size:12.5px;
+      font-weight:900;
+      color:#0f172a;
+      margin:10px 0 6px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      padding:13px 14px;
+      border-radius:12px;
+      border:1px solid rgba(15,23,42,0.18);
+      background:rgba(255,255,255,0.97);
+      font-size:14.5px;
+      outline:none;
+      transition:.18s ease;
+      font-family:"Montserrat",sans-serif;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{
+      border-color: rgba(209,164,75,0.9);
+      box-shadow: 0 0 0 4px rgba(209,164,75,0.18);
+    }
+    .formGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    .full{grid-column:1/-1}
 
     .btn{
       margin-top:14px;
@@ -108,7 +240,7 @@
       border:none;
       background: linear-gradient(135deg, var(--accent), #f6c56b);
       color:#0b1220;
-      font-weight:800;
+      font-weight:900;
       font-size:16px;
       cursor:pointer;
       box-shadow:0 12px 30px rgba(209,164,75,0.22);
@@ -116,6 +248,14 @@
     }
     .btn:hover{transform:translateY(-2px);filter:brightness(1.02)}
     .btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+
+    .note{
+      margin-top:10px;
+      font-size:11.5px;
+      color:rgba(2,6,23,0.70);
+      line-height:1.6;
+      font-weight:700;
+    }
 
     .thank{
       display:none;
@@ -125,7 +265,7 @@
       background:rgba(34,197,94,0.10);
       border:1px solid rgba(34,197,94,0.25);
       color:#14532d;
-      font-weight:800;
+      font-weight:900;
       line-height:1.6;
       text-align:center;
     }
@@ -138,10 +278,28 @@
       padding:0 10px;
     }
 
-    @media (max-width:720px){
-      .grid{grid-template-columns:1fr}
-      .logo{width:68px;height:68px}
-      .card{padding:20px}
+    .faq{margin-top:10px;display:grid;gap:10px}
+    details{
+      background: rgba(255,255,255,0.7);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--primary);
+      font-size:13px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.6;font-weight:600}
+
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+      .formGrid{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .headline{font-size:24px}
     }
   </style>
 </head>
@@ -151,86 +309,203 @@
     <div class="card">
       <div class="top">
         <img class="logo" src="elite-trainers-academy.png" alt="Elite Trainers Academy Logo">
-        <div>
+        <div class="brand">
           <h1>Elite Trainers Academy</h1>
-          <div class="sub">Fill this application to be contacted by our team. Serious requests only.</div>
+          <div class="sub">برنامج تدريب عملي على الـ Closing — طلبات جادة فقط</div>
         </div>
       </div>
 
-      <div class="error" id="errorBox"></div>
+      <div class="hero">
+        <div class="heroLeft">
+          <div class="kicker">⚡ برنامج عملي — مكالمات + اعتراضات + تطبيق</div>
 
-      <form id="form">
-        <div class="grid">
-          <div>
-            <label for="nom">Full name *</label>
-            <input id="nom" name="nom" type="text" required placeholder="Your name">
+          <div class="headline">
+            تعلم مهارة <span>الـ Closing</span> بصح…
+            <br/>ماشي للناس كامل.
           </div>
 
-          <div>
-            <label for="whatsapp">WhatsApp number *</label>
-            <input id="whatsapp" name="whatsapp" type="tel" required placeholder="+213xxxxxxxxx">
+          <div class="lead">
+            إذا حاب “فلوس سهلة” راك في الصفحة الغالطة.
+            <br/>
+            إذا حاب تتعلم مهارة حقيقية (فهم، أسئلة، اعتراضات، قرار)… كمل.
           </div>
 
-          <div>
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" required placeholder="you@email.com">
-          </div>
-
-          <div>
-            <label for="niveau">Level</label>
-            <select id="niveau" name="niveau">
-              <option value="" selected>Choose</option>
-              <option>Beginner</option>
-              <option>Intermediate</option>
-              <option>Advanced</option>
-              <option>Professional</option>
-            </select>
-          </div>
-
-          <div class="full">
-            <label for="objectif">Main goal *</label>
-            <select id="objectif" name="objectif" required>
-              <option value="" selected disabled>Choose</option>
-              <option>Personal coaching</option>
-              <option>Become a trainer</option>
-              <option>Join an academy program</option>
-              <option>Nutrition plan</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="full">
-            <label for="message">Tell us about your objective *</label>
-            <textarea id="message" name="message" required placeholder="Explain what you want to achieve..."></textarea>
-          </div>
-
-          <!-- ✅ Tracking hidden fields -->
-          <input type="hidden" name="landing_url" id="landing_url">
-          <input type="hidden" name="referrer" id="referrer">
-          <input type="hidden" name="traffic_source" id="traffic_source">
-
-          <input type="hidden" name="utm_source" id="utm_source">
-          <input type="hidden" name="utm_medium" id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign">
-          <input type="hidden" name="utm_content" id="utm_content">
-          <input type="hidden" name="utm_term" id="utm_term">
-          <input type="hidden" name="utm_id" id="utm_id">
-          <input type="hidden" name="fbclid" id="fbclid">
-
-          <div class="full">
-            <button class="btn" id="submitBtn" type="submit">Submit Application</button>
+          <div class="bullets">
+            <div class="bullet">
+              <div class="dot"></div>
+              <div>
+                <b>تدريب على المكالمات الواقعية</b>
+                <p>تتعلم كيف تفتح call، كيف تسوق الحوار، وكيف توصل للقرار بلا ضغط ولا تمثيل.</p>
+              </div>
+            </div>
+            <div class="bullet">
+              <div class="dot"></div>
+              <div>
+                <b>اعتراضات السوق (غالي / نفكر / ماعنديش وقت)</b>
+                <p>نفس الجمل اللي تسمعهم كل يوم… راح تولي تعرف كيف تجاوب باحتراف.</p>
+              </div>
+            </div>
+            <div class="bullet">
+              <div class="dot"></div>
+              <div>
+                <b>سكريبتات + تطبيق + تصحيح</b>
+                <p>مشاهدة وحدها ما تكفيش: راح تخدم، تتسجل، وتتصلّح أخطاؤك.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </form>
 
-      <div class="thank" id="thankYou">
-        ✅ Application received successfully.<br/>
-        We will contact you shortly.
+        <div class="heroRight">
+          <div class="miniTitle">وش راح تربح من البرنامج؟</div>
+          <div class="miniText">هدفنا واضح: تولي قادر تدير مكالمة بثقة وتسيّرها للنهاية بطريقة نظيفة.</div>
+
+          <div class="miniList">
+            <div class="miniItem">✅ ثقة في الهضرة + التحكم في الأعصاب</div>
+            <div class="miniItem">✅ نظام واضح للمكالمة (مش عشوائي)</div>
+            <div class="miniItem">✅ ردود جاهزة على أكثر الاعتراضات</div>
+            <div class="miniItem">✅ تطبيق عملي + متابعة (حسب الباقة)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>وش هو الـ Closing بصح؟</h2>
+        <p>
+          الـ Closing ماشي “تهدر بزاف”.
+          هو فنّ الأسئلة، الفهم، والقدرة تخلي الشخص يقرر بوعي.
+          إذا كنت تكره الكذب والضغط… هذا بالضبط علاش تقدر تكون closer مليح.
+        </p>
+
+        <div class="grid2">
+          <div class="box">
+            <span class="tag ok">✅ هذا البرنامج ليك إذا…</span>
+            <ul>
+              <li>• راك حاب تتعلم مهارة حقيقية وتخدم عليها</li>
+              <li>• تقدر تخصص 60–90 دقيقة في النهار للتعلم والتطبيق</li>
+              <li>• تحب تتطور في الثقة والتواصل</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <span class="tag bad">❌ ماشي ليك إذا…</span>
+            <ul>
+              <li>• تحب نتائج سريعة بلا تعب</li>
+              <li>• ما تتحملش كلمة “لا” وتحب تهرب</li>
+              <li>• تحب غير تتفرج بدون تطبيق</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>كيفاش نخدمو؟ (مختصر و واضح)</h2>
+        <p>
+          راح تمشي معانا خطوة بخطوة:
+          فهم المكالمة → أسئلة قوية → اعتراضات → قرار.
+          كل مرحلة فيها تمارين وتطبيق.
+        </p>
+
+        <div class="faq">
+          <details>
+            <summary>واش لازم تكون عندي تجربة قبل؟</summary>
+            <p>لا. نبدأو من الصفر. بصح لازم تكون جدي وتطبق. اللي ما يطبقش… ما يتبدل حتى شيء.</p>
+          </details>
+          <details>
+            <summary>ما عنديش وقت بزاف… نقدر؟</summary>
+            <p>إذا ما تقدرش تدير على الأقل 60 دقيقة يومياً للتعلم والتطبيق، ما ننصحكش تبدأ. هذا تدريب عملي مش فيديوهات نتفرجو فيهم.</p>
+          </details>
+          <details>
+            <summary>واش كاين ضمان للنتائج؟</summary>
+            <p>ما نضمنوش “فلوس”. نضمنو: منهج عملي + أدوات + تدريب. النتيجة مربوطة بالتطبيق والانضباط تاعك.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="section" id="apply">
+        <h2>قدّم طلبك (باش نتواصل معاك)</h2>
+        <p>
+          عَمّر الاستمارة. إذا ملفك مناسب، راح يتواصل معاك واحد من الفريق.
+          <br/>طلبات جادة فقط.
+        </p>
+
+        <div class="error" id="errorBox"></div>
+
+        <form id="form">
+          <div class="formGrid">
+            <div>
+              <label for="nom">الاسم الكامل *</label>
+              <input id="nom" name="nom" type="text" required placeholder="مثال: محمد بن..." />
+            </div>
+
+            <div>
+              <label for="whatsapp">رقم واتساب *</label>
+              <input id="whatsapp" name="whatsapp" type="tel" required placeholder="+213xxxxxxxxx" />
+            </div>
+
+            <div>
+              <label for="email">الإيميل *</label>
+              <input id="email" name="email" type="email" required placeholder="you@email.com" />
+            </div>
+
+            <div>
+              <label for="niveau">مستواك الحالي</label>
+              <select id="niveau" name="niveau">
+                <option value="" selected>اختار</option>
+                <option>مبتدئ</option>
+                <option>عندي تجربة بسيطة</option>
+                <option>متوسط</option>
+                <option>محترف</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label for="objectif">هدفك الرئيسي *</label>
+              <select id="objectif" name="objectif" required>
+                <option value="" selected disabled>اختار</option>
+                <option>نتعلم الـ Closing من الصفر</option>
+                <option>نقوي مهاراتي في المكالمات والاعتراضات</option>
+                <option>نحتاج متابعة وتطبيق عملي</option>
+                <option>آخر</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label for="message">احكيلنا على وضعك وهدفك *</label>
+              <textarea id="message" name="message" required
+                placeholder="مثال: وش تخدم؟ علاش حاب الـ Closing؟ شحال تقدر تخصص وقت في النهار؟"></textarea>
+            </div>
+
+            <!-- ✅ Tracking hidden fields -->
+            <input type="hidden" name="landing_url" id="landing_url">
+            <input type="hidden" name="referrer" id="referrer">
+            <input type="hidden" name="traffic_source" id="traffic_source">
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_content" id="utm_content">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="utm_id" id="utm_id">
+            <input type="hidden" name="fbclid" id="fbclid">
+
+            <div class="full">
+              <button class="btn" id="submitBtn" type="submit">أرسل طلبي الآن</button>
+              <div class="note">
+                ملاحظة: هذا البرنامج مهارة وتدريب. النتائج تختلف حسب التطبيق والانضباط.
+                ما كاين حتى وعد بدخل مالي.
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="thank" id="thankYou">
+          ✅ تم استلام طلبك بنجاح.<br/>
+          راح نتواصلوا معاك قريباً على واتساب.
+        </div>
       </div>
     </div>
 
     <div class="footer">
-      © Elite Trainers Academy — This form is for applications only.
+      © Elite Trainers Academy — صفحة تقديم طلبات فقط.
     </div>
   </div>
 
@@ -284,8 +559,19 @@
       e.preventDefault();
       errorBox.style.display = "none";
 
+      // basic validation (optional extra)
+      const nom = document.getElementById("nom").value.trim();
+      const wa  = document.getElementById("whatsapp").value.trim();
+      const em  = document.getElementById("email").value.trim();
+      const obj = document.getElementById("objectif").value.trim();
+      const msg = document.getElementById("message").value.trim();
+      if(!nom || !wa || !em || !obj || !msg){
+        showError("⚠️ عَمّر الخانات الإلزامية كامل من فضلك.");
+        return;
+      }
+
       submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+      submitBtn.textContent = "…جاري الإرسال";
 
       try {
         const formData = new FormData(form);
@@ -299,13 +585,14 @@
 
         form.style.display = "none";
         thankYou.style.display = "block";
+        document.getElementById("apply").scrollIntoView({behavior:"smooth", block:"start"});
 
       } catch (err) {
         console.error(err);
-        showError("Submission failed. Please try again.");
+        showError("فشل الإرسال. عاود جرّب من فضلك.");
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Application";
+        submitBtn.textContent = "أرسل طلبي الآن";
       }
     });
   </script>
