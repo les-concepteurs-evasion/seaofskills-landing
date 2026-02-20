@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -34,45 +35,59 @@
         radial-gradient(900px 600px at 90% 20%, rgba(32,49,79,.22), transparent 55%),
         linear-gradient(145deg, var(--bg1), #020617);
       color:#0b1220;
+      text-align:center;
     }
 
-    .wrap{width:min(980px,100%);margin:0 auto;display:grid;gap:14px}
+    .wrap{width:min(980px,100%);margin:0 auto;display:grid;gap:14px;justify-items:center}
     .card{
+      width:100%;
       background:var(--card);
       border:1px solid rgba(255,255,255,0.35);
       border-radius:22px;
       padding:26px;
       box-shadow:0 18px 55px rgba(0,0,0,0.35);
       backdrop-filter: blur(10px);
+      text-align:center;
     }
 
-    .top{display:flex;align-items:center;gap:14px}
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      flex-direction:column;
+      text-align:center;
+    }
     .logo{
       width:72px;height:72px;border-radius:16px;
       object-fit:contain;background:rgba(0,0,0,0.04);
       padding:10px;border:1px solid rgba(0,0,0,0.06);
-      flex:0 0 auto;
+      margin:0 auto;
     }
     .brand h1{font-size:18px;line-height:1.2;color:var(--navy)}
     .brand .sub{margin-top:6px;font-size:12.5px;line-height:1.55;color:var(--muted)}
 
     .hero{
       display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns:1fr;
       gap:18px;
       margin-top:14px;
       align-items:stretch;
+      justify-items:center;
     }
     .heroLeft{
+      width:100%;
       padding:18px;
       border-radius:18px;
       border:1px solid var(--line);
       background: rgba(255,255,255,0.55);
+      text-align:center;
     }
     .kicker{
       display:inline-flex;
       gap:8px;
       align-items:center;
+      justify-content:center;
       font-weight:800;
       font-size:12px;
       color:#0b1220;
@@ -80,6 +95,7 @@
       border:1px solid rgba(209,164,75,0.35);
       padding:8px 10px;
       border-radius:999px;
+      margin:0 auto;
     }
     .headline{
       margin-top:12px;
@@ -87,21 +103,24 @@
       line-height:1.2;
       color:var(--primary);
       font-weight:900;
+      text-align:center;
     }
-    .headline span{color:var(--navy)}
     .lead{
       margin-top:10px;
       font-size:14px;
       line-height:1.7;
       color:var(--muted);
       font-weight:600;
+      text-align:center;
     }
 
     .heroRight{
+      width:100%;
       padding:18px;
       border-radius:18px;
       border:1px solid rgba(209,164,75,0.35);
       background: linear-gradient(180deg, rgba(209,164,75,0.14), rgba(255,255,255,0.65));
+      text-align:center;
     }
     .miniTitle{font-weight:900;color:var(--navy);font-size:14px}
     .miniText{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.7;font-weight:700}
@@ -131,11 +150,13 @@
       border-radius:18px;
       border:1px solid var(--line);
       background: rgba(255,255,255,0.55);
+      text-align:center;
     }
     .section h2{
       font-size:16px;
       color:var(--navy);
       font-weight:900;
+      text-align:center;
     }
     .section p{
       margin-top:10px;
@@ -143,6 +164,7 @@
       font-size:13px;
       line-height:1.85;
       font-weight:600;
+      text-align:center;
     }
 
     .list{
@@ -151,11 +173,14 @@
       gap:8px;
       list-style:none;
       padding:0;
+      justify-items:center;
     }
     .list li{
+      width:100%;
       display:flex;
       gap:10px;
       align-items:flex-start;
+      justify-content:center;
       color:var(--muted);
       font-size:12.8px;
       line-height:1.7;
@@ -164,6 +189,7 @@
       border:1px solid var(--line);
       border-radius:14px;
       padding:12px 12px;
+      text-align:center;
     }
     .badge{
       flex:0 0 auto;
@@ -178,7 +204,7 @@
     .badge.ok{background:var(--ok);border-color:rgba(34,197,94,0.25)}
     .badge.bad{background:var(--bad);border-color:rgba(239,68,68,0.25)}
 
-    .divider{height:1px;background:rgba(15,23,42,0.12);margin:14px 0}
+    .divider{height:1px;background:rgba(15,23,42,0.12);margin:14px auto}
 
     .error{
       display:none;
@@ -191,6 +217,7 @@
       font-size:13px;
       line-height:1.45;
       font-weight:700;
+      text-align:center;
     }
 
     label{
@@ -199,6 +226,7 @@
       font-weight:900;
       color:#0f172a;
       margin:10px 0 6px;
+      text-align:center;
     }
 
     input,select,textarea{
@@ -211,6 +239,7 @@
       outline:none;
       transition:.18s ease;
       font-family:"Montserrat",sans-serif;
+      text-align:center;
     }
     textarea{min-height:110px;resize:vertical}
     input:focus,select:focus,textarea:focus{
@@ -222,6 +251,7 @@
       grid-template-columns:1fr 1fr;
       gap:12px;
       margin-top:10px;
+      text-align:center;
     }
     .full{grid-column:1/-1}
 
@@ -248,6 +278,7 @@
       color:rgba(2,6,23,0.70);
       line-height:1.6;
       font-weight:700;
+      text-align:center;
     }
 
     .thank{
@@ -272,7 +303,6 @@
     }
 
     @media (max-width:860px){
-      .hero{grid-template-columns:1fr}
       .formGrid{grid-template-columns:1fr}
       .headline{font-size:24px}
     }
@@ -290,7 +320,6 @@
         </div>
       </div>
 
-      <!-- HERO -->
       <div class="hero">
         <div class="heroLeft">
           <div class="kicker">⚡ برنامج عملي</div>
@@ -314,7 +343,6 @@
         </div>
       </div>
 
-      <!-- كسر الوهم -->
       <div class="section">
         <h2>كسر الوهم</h2>
         <p>الحقيقة اللي ما يقولها حتى واحد:</p>
@@ -331,7 +359,6 @@
         </p>
       </div>
 
-      <!-- لمن هذا البرنامج؟ -->
       <div class="section">
         <h2>لمن هذا البرنامج؟</h2>
 
@@ -353,7 +380,6 @@
         </ul>
       </div>
 
-      <!-- الفرق بيننا وبين الأخرين -->
       <div class="section">
         <h2>الفرق بيننا وبين الأخرين</h2>
         <p>معظم البرامج الأخرى تعطيك معلومات.</p>
@@ -372,7 +398,6 @@
         <p>الأفضل فقط يتم اختيارهم للعمل معنا.</p>
       </div>
 
-      <!-- نتائج حقيقية -->
       <div class="section">
         <h2>نتائج حقيقية</h2>
         <p>(هنا لازم تحط Proof حقيقي)</p>
@@ -385,7 +410,6 @@
         <p>بدون Proof، الصفحة تموت.</p>
       </div>
 
-      <!-- التسجيل معنا + FORM -->
       <div class="section" id="apply">
         <h2>التسجيل معنا</h2>
         <p>
@@ -452,7 +476,6 @@
                 <textarea id="why" name="why" required placeholder="اكتب باختصار: علاش حاب تدخل؟ وش هو الهدف تاعك؟"></textarea>
               </div>
 
-              <!-- tracking -->
               <input type="hidden" name="landing_url" id="landing_url">
               <input type="hidden" name="referrer" id="referrer">
               <input type="hidden" name="traffic_source" id="traffic_source">
@@ -574,3 +597,4 @@
   </script>
 </body>
 </html>
+```
