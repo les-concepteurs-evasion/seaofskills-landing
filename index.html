@@ -415,18 +415,6 @@
         <p>الأفضل فقط يتم اختيارهم للعمل معنا.</p>
       </div>
 
-      <div class="section">
-        <h2>نتائج حقيقية</h2>
-        <p>(هنا لازم تحط Proof حقيقي)</p>
-        <ul class="list">
-          <li><span class="badge ok">•</span>عدد closers في الفريق</li>
-          <li><span class="badge ok">•</span>متوسط مداخيل</li>
-          <li><span class="badge ok">•</span>Screenshots CRM (مموّهة)</li>
-          <li><span class="badge ok">•</span>شهادات فيديو</li>
-        </ul>
-        <p>بدون Proof، الصفحة تموت.</p>
-      </div>
-
       <div class="section" id="apply">
         <h2>التسجيل معنا</h2>
         <p>
@@ -599,7 +587,7 @@
           mode: "no-cors"
         });
 
-        /* ✅ FIRE LEAD EVENT ONLY AFTER SUCCESS */
+        // Track Lead (Pixel) on successful submit
         if (typeof fbq === "function") {
           fbq('track', 'Lead');
         }
