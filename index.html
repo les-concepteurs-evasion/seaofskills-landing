@@ -481,6 +481,35 @@
                 <textarea id="why" name="why" required placeholder="اكتب باختصار: علاش حاب تدخل؟ وش هو الهدف تاعك؟"></textarea>
               </div>
 
+              <!-- ✅ NEW QUALIFICATION QUESTIONS (ADDED ONLY) -->
+              <div class="full">
+                <label for="problem_now">ما هو المشكل الذي تواجهه الان و ترغب في ايجاد حل له ؟ *</label>
+                <textarea id="problem_now" name="problem_now" required placeholder="اكتب المشكل باختصار..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="investment_ready">لو اقترحنا عليك تدريب عملي و متابعة خطوة خطوة تحل لك هذا المشكل نهائيا كم أنت مستعد لتدفع على هذا الحل؟ *</label>
+                <select id="investment_ready" name="investment_ready" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option>أقل من 10,000 دج</option>
+                  <option>10,000 – 25,000 دج</option>
+                  <option>25,000 – 50,000 دج</option>
+                  <option>أكثر من 50,000 دج</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="best_call_time">ما هو الوقت الذي يناسبك لكي نتصل بك و نتكلم في هذا الموضوع و نعطيك تفاصيل أكثر؟ *</label>
+                <select id="best_call_time" name="best_call_time" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option>صباح (09:00 – 12:00)</option>
+                  <option>بعد الظهر (12:00 – 16:00)</option>
+                  <option>مساء (16:00 – 20:00)</option>
+                  <option>أي وقت اليوم</option>
+                </select>
+              </div>
+              <!-- ✅ END NEW QUESTIONS -->
+
               <input type="hidden" name="landing_url" id="landing_url">
               <input type="hidden" name="referrer" id="referrer">
               <input type="hidden" name="traffic_source" id="traffic_source">
@@ -562,7 +591,11 @@
       const sales_before = document.getElementById("sales_before").value.trim();
       const why = document.getElementById("why").value.trim();
 
-      if(!fullname || !phone || !age || !education || !experience || !sales_before || !why){
+      const problem_now = document.getElementById("problem_now").value.trim();
+      const investment_ready = document.getElementById("investment_ready").value.trim();
+      const best_call_time = document.getElementById("best_call_time").value.trim();
+
+      if(!fullname || !phone || !age || !education || !experience || !sales_before || !why || !problem_now || !investment_ready || !best_call_time){
         showError("⚠️ عَمّر الخانات الإلزامية كامل من فضلك.");
         return;
       }
