@@ -345,8 +345,8 @@
           </div>
 
           <div class="lead">
-            خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br/><br/>
-            راح نعلموك كيفاش تقنع الزبون، تتعامل مع الاعتراضات، وتغلق البيع حتى لو ما عندكش تجربة كبيرة…<br/>
+            خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br><br>
+            راح نعلموك كيفاش تقنع الزبون، تتعامل مع الاعتراضات، وتغلق البيع حتى لو ما عندكش تجربة كبيرة…<br>
             راح تتعلم كيفاش تحوّل الزبائن المهتمين إلى مبيعات فعلية و تزيد دخلك بشكل واضح…
           </div>
         </div>
@@ -365,11 +365,11 @@
           <li><span class="badge bad">•</span>باش تزيد المبيعات</li>
         </ul>
         <p>
-          ماشي لازم تزيد في الإعلانات فقط…<br/>
+          ماشي لازم تزيد في الإعلانات فقط…<br>
           ماشي لازم يكون عندك منتج خارق…
         </p>
         <p>
-          الحاجة اللي تصنع الفرق غالبًا هي طريقة البيع…<br/>
+          الحاجة اللي تصنع الفرق غالبًا هي طريقة البيع…<br>
           إذا ما عندكش نظام بيع واضح راح يجيك اهتمام لكن ما يتحولش لمبيعات…
         </p>
       </div>
@@ -408,7 +408,7 @@
         </ul>
 
         <p>
-          لدينا فريق Closers محترف يخدم يومياً<br/>
+          لدينا فريق Closers محترف يخدم يومياً<br>
           ويربح بين 100.000 إلى 240.000 دج شهريًا.
         </p>
         <p>والأهم كاينة إمكانية اختيار الأفضل للعمل معنا.</p>
@@ -417,8 +417,8 @@
       <div class="section" id="apply">
         <h2>التسجيل معنا</h2>
         <p>
-          بعد ما تترك معلوماتك،<br/>
-          أحد أعضاء الفريق يتواصل معك باش يعطيك التفاصيل الكاملة<br/>
+          بعد ما تترك معلوماتك،<br>
+          أحد أعضاء الفريق يتواصل معك باش يعطيك التفاصيل الكاملة<br>
           ونشوفو إذا هذا البرنامج فعلاً يناسبك.
         </p>
 
@@ -514,6 +514,12 @@
               <input type="hidden" name="utm_medium" id="utm_medium">
               <input type="hidden" name="utm_campaign" id="utm_campaign">
 
+              <input type="hidden" name="fbp" id="fbp">
+              <input type="hidden" name="fbc" id="fbc">
+              <input type="hidden" name="user_agent" id="user_agent">
+              <input type="hidden" name="event_id" id="event_id">
+              <input type="hidden" name="event_source_url" id="event_source_url">
+
               <div class="full">
                 <button class="btn" id="submitBtn" type="submit">قدّم طلبك الآن</button>
                 <div class="note">
@@ -524,7 +530,7 @@
           </form>
 
           <div class="thank" id="thankYou">
-            ✅ تم استلام طلبك بنجاح.<br/>
+            ✅ تم استلام طلبك بنجاح.<br>
             راح يتواصل معاك واحد من الفريق قريباً.
           </div>
         </div>
@@ -550,14 +556,40 @@
 
     const scriptURL = "https://script.google.com/macros/s/AKfycbxUVtHd5iUJXn72xerrs_NmyhYBw4X4Q_UCfQ8oSw0Hf_k6mpzQdvxeQ3en49DcVbFhmg/exec";
 
+    const QUALIFIED_PURCHASE_ANSWERS = [
+      "نعم بالتأكيد",
+      "نعم لكن أريد معرفة المزيد"
+    ];
+
     function showError(msg){
       errorBox.textContent = msg;
       errorBox.style.display = "block";
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp("(^|; )" + name + "=([^;]*)"));
+      return match ? decodeURIComponent(match[2]) : "";
+    }
+
+    function getFbclid() {
+      const qs = new URLSearchParams(window.location.search);
+      return qs.get("fbclid") || "";
+    }
+
+    function buildFbc() {
+      const fbclid = getFbclid();
+      if (!fbclid) return "";
+      return "fb.1." + Date.now() + "." + fbclid;
+    }
+
+    function generateEventId() {
+      return "evt_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+    }
+
     (function fillTracking(){
       const qs = new URLSearchParams(window.location.search);
+
       const setVal = (id, val) => {
         const el = document.getElementById(id);
         if (el) el.value = val || "";
@@ -565,6 +597,15 @@
 
       setVal("landing_url", window.location.href);
       setVal("referrer", document.referrer || "");
+      setVal("event_source_url", window.location.href);
+      setVal("user_agent", navigator.userAgent || "");
+
+      const fbp = getCookie("_fbp");
+      const fbcFromCookie = getCookie("_fbc");
+      const fbcBuilt = buildFbc();
+
+      setVal("fbp", fbp);
+      setVal("fbc", fbcFromCookie || fbcBuilt);
 
       let source = "direct";
       if (document.referrer) source = "referral";
@@ -576,7 +617,6 @@
       if (us.includes("instagram")) source = "instagram";
 
       setVal("traffic_source", source);
-
       setVal("utm_source", qs.get("utm_source"));
       setVal("utm_medium", qs.get("utm_medium"));
       setVal("utm_campaign", qs.get("utm_campaign"));
@@ -593,12 +633,11 @@
       const experience = document.getElementById("experience").value.trim();
       const sales_before = document.getElementById("sales_before").value.trim();
       const why = document.getElementById("why").value.trim();
-
       const problem_now = document.getElementById("problem_now").value.trim();
       const investment_ready = document.getElementById("investment_ready").value.trim();
       const best_call_time = document.getElementById("best_call_time").value.trim();
 
-      if(!fullname || !phone || !age || !education || !experience || !sales_before || !why || !problem_now || !investment_ready || !best_call_time){
+      if (!fullname || !phone || !age || !education || !experience || !sales_before || !why || !problem_now || !investment_ready || !best_call_time) {
         showError("⚠️ عَمّر الخانات الإلزامية كامل من فضلك.");
         return;
       }
@@ -607,6 +646,9 @@
       submitBtn.textContent = "…جاري الإرسال";
 
       try {
+        const eventId = generateEventId();
+        document.getElementById("event_id").value = eventId;
+
         const formData = new FormData(form);
 
         await fetch(scriptURL, {
@@ -616,22 +658,21 @@
         });
 
         if (typeof fbq === "function") {
-          fbq('track', 'Lead');
+          fbq("track", "Lead");
 
-          if (
-            investment_ready === "نعم بالتأكيد" ||
-            investment_ready === "نعم لكن أريد معرفة المزيد"
-          ) {
-            fbq('track', 'Purchase', {
+          if (QUALIFIED_PURCHASE_ANSWERS.includes(investment_ready)) {
+            fbq("track", "Purchase", {
               value: 29000,
-              currency: 'DZD'
+              currency: "DZD"
+            }, {
+              eventID: eventId
             });
           }
         }
 
         form.style.display = "none";
         thankYou.style.display = "block";
-        document.getElementById("apply").scrollIntoView({behavior:"smooth", block:"start"});
+        document.getElementById("apply").scrollIntoView({ behavior:"smooth", block:"start" });
 
       } catch (err) {
         console.error(err);
