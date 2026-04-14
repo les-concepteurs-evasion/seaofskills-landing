@@ -340,15 +340,15 @@
         <div class="heroLeft">
           <div class="kicker">⚡ أقوى مهارة تحتاجها</div>
 
-         <div class="headline">
-  إذا عندك مشروع أو تخدم في المبيعات وحاب تزيد دخلك بطريقة حقيقية…
-</div>
+          <div class="headline">
+            إذا عندك مشروع أو تخدم في المبيعات وحاب تزيد دخلك بطريقة حقيقية…
+          </div>
 
-<div class="lead">
-  خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br/><br/>
-  راح نعلموك كيفاش تقنع الزبون، تتعامل مع الاعتراضات، وتغلق البيع حتى لو ما عندكش تجربة كبيرة…<br/>
-  راح تتعلم كيفاش تحوّل الزبائن المهتمين إلى مبيعات فعلية و تزيد دخلك بشكل واضح…
-</div>
+          <div class="lead">
+            خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br/><br/>
+            راح نعلموك كيفاش تقنع الزبون، تتعامل مع الاعتراضات، وتغلق البيع حتى لو ما عندكش تجربة كبيرة…<br/>
+            راح تتعلم كيفاش تحوّل الزبائن المهتمين إلى مبيعات فعلية و تزيد دخلك بشكل واضح…
+          </div>
         </div>
 
         <div class="heroRight">
@@ -418,7 +418,7 @@
         <h2>التسجيل معنا</h2>
         <p>
           بعد ما تترك معلوماتك،<br/>
-         أحد أعضاء الفريق يتواصل معك باش يعطيك التفاصيل الكاملة<br/>
+          أحد أعضاء الفريق يتواصل معك باش يعطيك التفاصيل الكاملة<br/>
           ونشوفو إذا هذا البرنامج فعلاً يناسبك.
         </p>
 
@@ -480,7 +480,6 @@
                 <textarea id="why" name="why" required placeholder="اكتب باختصار: علاش حاب تدخل؟ وش هو الهدف تاعك؟"></textarea>
               </div>
 
-              <!-- ✅ NEW QUALIFICATION QUESTIONS (ADDED ONLY) -->
               <div class="full">
                 <label for="problem_now">ما هو المشكل الذي تواجهه الان و ترغب في ايجاد حل له ؟ *</label>
                 <textarea id="problem_now" name="problem_now" required placeholder="اكتب المشكل باختصار..."></textarea>
@@ -507,7 +506,6 @@
                   <option>أي وقت اليوم</option>
                 </select>
               </div>
-              <!-- ✅ END NEW QUESTIONS -->
 
               <input type="hidden" name="landing_url" id="landing_url">
               <input type="hidden" name="referrer" id="referrer">
@@ -534,14 +532,15 @@
     </div>
 
     <div class="footer">
-  <div style="max-width:800px;margin:auto;line-height:1.6;">
-    This site is not a part of the Facebook website or Facebook Inc.
-  </div>
+      <div style="max-width:800px;margin:auto;line-height:1.6;">
+        This site is not a part of the Facebook website or Facebook Inc.
+      </div>
 
-  <div style="margin-top:10px;">
-    © Elite Trainers Academy — صفحة تقديم طلبات فقط.
+      <div style="margin-top:10px;">
+        © Elite Trainers Academy — صفحة تقديم طلبات فقط.
+      </div>
+    </div>
   </div>
-</div>
 
   <script>
     const form = document.getElementById("form");
@@ -616,9 +615,18 @@
           mode: "no-cors"
         });
 
-        // Track Lead (Pixel) on successful submit
         if (typeof fbq === "function") {
           fbq('track', 'Lead');
+
+          if (
+            investment_ready === "نعم بالتأكيد" ||
+            investment_ready === "نعم لكن أريد معرفة المزيد"
+          ) {
+            fbq('track', 'Purchase', {
+              value: 29000,
+              currency: 'DZD'
+            });
+          }
         }
 
         form.style.display = "none";
