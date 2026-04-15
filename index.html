@@ -14,20 +14,22 @@
 
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1414346493287788');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1414346493287788');
+    fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1414346493287788&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1414346493287788&ev=PageView&noscript=1"
+    />
+  </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
@@ -341,15 +343,15 @@
         <div class="heroLeft">
           <div class="kicker">⚡ برنامج تدريبي</div>
 
-         <div class="headline">
-  إذا راك مهتم تتعلم مهارة لي تزيدلك في مدخولك…
-</div>
+          <div class="headline">
+            إذا راك مهتم تتعلم مهارة لي تزيدلك في مدخولك…
+          </div>
 
-<div class="lead">
-  خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br/><br/>
-  راح نعلموك كيفاش تقنع أصعب الزبائن و كيفاش تبيع حتى لو ما عندكش تجربة…<br/>
-  نعلموك مهارة مطلوبة في الشركات و عالم البزنس مع إمكانية العمل ضمن فريقنا و تحقيق مدخول…
-</div>
+          <div class="lead">
+            خليني نعرفك ببرنامجنا التدريبي لتعلم مهارة البيع وإقناع الزبائن (closing)<br/><br/>
+            راح نعلموك كيفاش تقنع أصعب الزبائن و كيفاش تبيع حتى لو ما عندكش تجربة…<br/>
+            نعلموك مهارة مطلوبة في الشركات و عالم البزنس مع إمكانية العمل ضمن فريقنا و تحقيق مدخول…
+          </div>
         </div>
 
         <div class="heroRight">
@@ -380,7 +382,7 @@
 
         <p>هذا البرنامج لك إذا:</p>
         <ul class="list">
-          <li><span class="badge ok">✔</span>حاب تحترف مهارة البيع و تزيد بها مدخولك كلما زدت تعلمتها </li>
+          <li><span class="badge ok">✔</span>حاب تحترف مهارة البيع و تزيد بها مدخولك كلما زدت تعلمتها</li>
           <li><span class="badge ok">✔</span>مستعد تتعلم وتتطور يومياً</li>
           <li><span class="badge ok">✔</span>ما تهربش من الرفض أو الفشل</li>
           <li><span class="badge ok">✔</span>عندك انضباط 1–2 ساعة يومياً</li>
@@ -480,20 +482,19 @@
                 <textarea id="why" name="why" required placeholder="اكتب باختصار: علاش حاب تدخل؟ وش هو الهدف تاعك؟"></textarea>
               </div>
 
-              <!-- ✅ NEW QUALIFICATION QUESTIONS (ADDED ONLY) -->
               <div class="full">
                 <label for="problem_now">ما هو المشكل الذي تواجهه الان و ترغب في ايجاد حل له ؟ *</label>
                 <textarea id="problem_now" name="problem_now" required placeholder="اكتب المشكل باختصار..."></textarea>
               </div>
 
               <div class="full">
-                <label for="investment_ready">لو اقترحنا عليك تدريب عملي و متابعة خطوة خطوة حتى تنجح هل أنت مستعد لتشتريه *</label>
+                <label for="investment_ready">لو اقترحنا عليك تدريب عملي و متابعة خطوة خطوة حتى تنجح هل أنت مستعد لتشتريه؟ *</label>
                 <select id="investment_ready" name="investment_ready" required>
                   <option value="" selected disabled>اختار</option>
-                  <option>نعم بالتأكيد</option>
-                  <option>نعم لكن أريد معرفة المزيد</option>
-                  <option>نعم لكن لا أملك المبلغ المطلوب</option>
-                  <option>لست مستعد للدفع</option>
+                  <option value="buy_now">نعم بالتأكيد</option>
+                  <option value="need_info">نعم لكن أريد معرفة المزيد</option>
+                  <option value="no_budget">نعم لكن لا أملك المبلغ المطلوب</option>
+                  <option value="not_ready">لست مستعد للدفع</option>
                 </select>
               </div>
 
@@ -507,7 +508,6 @@
                   <option>أي وقت اليوم</option>
                 </select>
               </div>
-              <!-- ✅ END NEW QUESTIONS -->
 
               <input type="hidden" name="landing_url" id="landing_url">
               <input type="hidden" name="referrer" id="referrer">
@@ -534,14 +534,15 @@
     </div>
 
     <div class="footer">
-  <div style="max-width:800px;margin:auto;line-height:1.6;">
-    This site is not a part of the Facebook website or Facebook Inc.
-  </div>
+      <div style="max-width:800px;margin:auto;line-height:1.6;">
+        This site is not a part of the Facebook website or Facebook Inc.
+      </div>
 
-  <div style="margin-top:10px;">
-    © Elite Trainers Academy — صفحة تقديم طلبات فقط.
+      <div style="margin-top:10px;">
+        © Elite Trainers Academy — صفحة تقديم طلبات فقط.
+      </div>
+    </div>
   </div>
-</div>
 
   <script>
     const form = document.getElementById("form");
@@ -616,9 +617,17 @@
           mode: "no-cors"
         });
 
-        // Track Lead (Pixel) on successful submit
         if (typeof fbq === "function") {
-          fbq('track', 'Lead');
+          const purchaseQualifiedAnswers = ["buy_now", "need_info"];
+
+          if (purchaseQualifiedAnswers.includes(investment_ready)) {
+            fbq('track', 'Purchase', {
+              value: 1.00,
+              currency: 'USD'
+            });
+          } else {
+            fbq('track', 'Lead');
+          }
         }
 
         form.style.display = "none";
