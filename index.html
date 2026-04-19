@@ -5,10 +5,10 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>برنامج الـ Closing — Elite Trainers Academy</title>
-  <meta name="description" content="برنامج تدريبي خطوة خطوة في الـ closing مع فرصة انتقاء للعمل ضمن فريقنا." />
+  <meta name="description" content="برنامج تدريبي خطوة خطوة في الـ closing مع فرصة انتقاء للعمل ضمن فريقنا.">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -29,7 +29,7 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1414346493287788&ev=PageView&noscript=1"
       alt=""
-    />
+    >
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -515,15 +515,7 @@
                 </select>
               </div>
 
-              <input type="hidden" name="landing_url" id="landing_url">
-              <input type="hidden" name="referrer" id="referrer">
               <input type="hidden" name="traffic_source" id="traffic_source">
-              <input type="hidden" name="utm_source" id="utm_source">
-              <input type="hidden" name="utm_medium" id="utm_medium">
-              <input type="hidden" name="utm_campaign" id="utm_campaign">
-              <input type="hidden" name="utm_content" id="utm_content">
-              <input type="hidden" name="utm_term" id="utm_term">
-              <input type="hidden" name="fbclid" id="fbclid">
 
               <div class="full">
                 <button class="btn" id="submitBtn" type="submit">قدّم طلبك الآن</button>
@@ -572,11 +564,6 @@
     function hideError() {
       errorBox.textContent = "";
       errorBox.style.display = "none";
-    }
-
-    function setVal(id, val) {
-      const el = document.getElementById(id);
-      if (el) el.value = val || "";
     }
 
     function normalizePhone(value) {
@@ -636,26 +623,17 @@
 
     (function fillTracking() {
       const qs = new URLSearchParams(window.location.search);
-
-      setVal("landing_url", window.location.href);
-      setVal("referrer", document.referrer || "");
-
       let source = "direct";
-      if (document.referrer) source = "referral";
-
       const us = String(qs.get("utm_source") || "").toLowerCase();
-      if (us.includes("facebook")) source = "facebook";
-      if (us.includes("google")) source = "google";
-      if (us.includes("tiktok")) source = "tiktok";
-      if (us.includes("instagram")) source = "instagram";
 
-      setVal("traffic_source", source);
-      setVal("utm_source", qs.get("utm_source"));
-      setVal("utm_medium", qs.get("utm_medium"));
-      setVal("utm_campaign", qs.get("utm_campaign"));
-      setVal("utm_content", qs.get("utm_content"));
-      setVal("utm_term", qs.get("utm_term"));
-      setVal("fbclid", qs.get("fbclid"));
+      if (us.includes("facebook")) source = "facebook";
+      else if (us.includes("google")) source = "google";
+      else if (us.includes("tiktok")) source = "tiktok";
+      else if (us.includes("instagram")) source = "instagram";
+      else if (document.referrer) source = "referral";
+
+      const trafficInput = document.getElementById("traffic_source");
+      if (trafficInput) trafficInput.value = source;
     })();
 
     form.addEventListener("submit", async function(e) {
