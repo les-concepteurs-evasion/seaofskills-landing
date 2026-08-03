@@ -199,7 +199,7 @@
       grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
       gap:12px;
       margin-top:14px;
-      text-align:right;
+      text-align:center;
     }
 
     .featureCard{
@@ -207,6 +207,7 @@
       border:1px solid var(--line);
       border-radius:14px;
       padding:14px;
+      text-align:center;
     }
 
     .featureCard .icon{
@@ -232,32 +233,35 @@
     /* آراء الزبائن / الشهادات */
     .testimonialsGrid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
       gap:12px;
       margin-top:14px;
-      text-align:right;
+      text-align:center;
     }
 
     .testimonialCard{
       background:rgba(255,255,255,0.88);
       border:1px solid rgba(209,164,75,0.3);
       border-radius:14px;
-      padding:14px;
-      position:relative;
+      padding:16px 14px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .testimonialCard .stars{
       color:#d1a44b;
       font-size:12px;
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
 
     .testimonialCard p{
       font-size:12.5px;
       color:var(--primary);
-      line-height:1.6;
+      line-height:1.65;
       font-weight:700;
-      margin:0 0 10px;
+      margin:0 0 12px;
     }
 
     .testimonialCard .author{
@@ -265,7 +269,7 @@
       color:var(--muted);
       font-weight:800;
       border-top:1px dashed var(--line);
-      padding-top:6px;
+      padding-top:8px;
     }
 
     .section{
@@ -449,7 +453,7 @@
         </div>
       </div>
 
-      <!-- قسم الشهادات الاجتماعية (Social Proof) -->
+      <!-- قسم الشهادات الاجتماعية (3 شهادات) -->
       <div class="section">
         <h2>نتائج وتقييمات مشاركين سابقين ⭐</h2>
         <div class="testimonialsGrid">
@@ -462,6 +466,11 @@
             <div class="stars">★★★★★</div>
             <p>«كان عندي مشكل كبير لما الزبون يقول السعر غالي. تعلمت كيفاش نبين قيمة الخدمة قبل ما نحكي على السعر. المبيعات زادت بشكل ملحوظ.»</p>
             <div class="author">أمينة ك. — مبيعات خدمات واستشارات</div>
+          </div>
+          <div class="testimonialCard">
+            <div class="stars">★★★★★</div>
+            <p>«طريقة المتابعة وغلق المبيعات غيرت كلياً كيفاش نهدر مع الزبائن في الإنستغرام. وليت نعرف وينتا نغلق الصفحة بلا ما نطول في الهضرة.»</p>
+            <div class="author">حمزة م. — صاحب مشروع ملابس</div>
           </div>
         </div>
       </div>
@@ -548,7 +557,7 @@
                 <select id="best_call_time" name="best_call_time" required>
                   <option value="" selected disabled>اختار</option>
                   <option>صباح (09:00 – 12:00)</option>
-                  <option>بعد الظهر (12:00 – 16:00)</option>
+                  <option>بعد הظهر (12:00 – 16:00)</option>
                   <option>مساء (16:00 – 20:00)</option>
                   <option>أي وقت اليوم</option>
                 </select>
