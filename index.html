@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -53,7 +53,7 @@
     html{scroll-behavior:smooth}
 
     body{
-      font-family:"Montserrat",sans-serif;
+      font-family:"Cairo", "Montserrat", sans-serif;
       min-height:100vh;
       padding:22px;
       background:
@@ -149,7 +149,7 @@
     .headline{
       margin-top:12px;
       font-size:31px;
-      line-height:1.22;
+      line-height:1.35;
       color:var(--primary);
       font-weight:900;
     }
@@ -179,7 +179,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      font-family:"Montserrat",sans-serif;
+      font-family:"Cairo", "Montserrat", sans-serif;
     }
 
     .ctaBtn:hover,.btn:hover{
@@ -333,7 +333,7 @@
       font-size:14.5px;
       outline:none;
       transition:.18s ease;
-      font-family:"Montserrat",sans-serif;
+      font-family:"Cairo", "Montserrat", sans-serif;
       text-align:center;
     }
 
@@ -422,7 +422,121 @@
             إلى مبيعات حقيقية دون تخفيض السعر أو الضغط على الزبون.
           </div>
 
-          <a class="ctaBtn" href="#apply" onclick="trackCtaClick()">نعم أريد التسجيل لمعرفة المزيد 👈</a>
+          <a class="ctaBtn" href="#apply-top" onclick="trackCtaClick()">نعم أريد التسجيل لمعرفة المزيد 👈</a>
+        </div>
+      </div>
+
+      <!-- 1. نموذج جمع المعلومات العلوي -->
+      <div class="section form-section-block" id="apply-top">
+        <h2>سجل معلوماتك</h2>
+        <p>
+          بعد ما تترك معلوماتك، راح يتصل بك أحد أعضاء الفريق لشرح التفاصيل
+          ونشوفو إذا البرنامج مناسب لوضعك الحالي.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="error errorBox"></div>
+
+        <div class="formWrap">
+          <form class="lead-form" novalidate>
+            <div class="formGrid">
+
+              <div>
+                <label>الاسم واللقب *</label>
+                <input name="fullname" type="text" required maxlength="100" placeholder="مثال: محمد بن..." autocomplete="name">
+              </div>
+
+              <div>
+                <label>رقم الهاتف *</label>
+                <input name="phone" type="tel" required inputmode="tel" maxlength="20" placeholder="05xxxxxxxx / +213xxxxxxxxx" autocomplete="tel">
+              </div>
+
+              <div class="full">
+                <label>ماذا تعمل في الوقت الحالي؟ *</label>
+                <select name="profile_type" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option value="business_owner">عندي بزنس</option>
+                  <option value="salesperson">أعمل في المبيعات</option>
+                  <option value="both">عندي بزنس وأعمل في البيع</option>
+                  <option value="other">شيء آخر</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label>وش تبيع؟ *</label>
+                <input name="offer_type" type="text" required maxlength="120" placeholder="مثال: ملابس / خدمات / دورات / عقارات / منتجات تجميل...">
+              </div>
+
+              <div class="full">
+                <label>كم عدد الزبائن المهتمين اللي يهدروا معاك يومياً؟ *</label>
+                <select name="daily_leads" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option value="less_5">أقل من 5</option>
+                  <option value="5_20">من 5 إلى 20</option>
+                  <option value="more_20">أكثر من 20</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label>ما هو أكبر مشكل عندك في البيع حالياً؟ *</label>
+                <select name="main_problem" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option value="price_objection">الزبائن يقولو السعر غالي</option>
+                  <option value="think_about_it">الزبائن يقولو نخمم ونرجعلك</option>
+                  <option value="no_trust">صعوبة بناء الثقة</option>
+                  <option value="closing_problem">صعوبة غلق البيع</option>
+                  <option value="low_leads">ما عنديش زبائن مهتمين كفاية</option>
+                  <option value="other">مشكل آخر</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label>إذا تأكدت بأن هذه الدورة مناسبة لك وتساعدك في زيادة مبيعاتك، هل أنت مستعد تشتريها؟ *</label>
+                <select name="investment_ready" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option value="buy_now">نعم، جاهز إذا فيها نتائج</option>
+                  <option value="need_info">نعم لكن أحتاج أفهم التفاصيل</option>
+                  <option value="no_budget">مهتم لكن حالياً لا أملك المال</option>
+                  <option value="not_ready">لست مستعداً للدفع</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label>ما هو الوقت المناسب للاتصال بك؟ *</label>
+                <select name="best_call_time" required>
+                  <option value="" selected disabled>اختار</option>
+                  <option>صباح (09:00 – 12:00)</option>
+                  <option>بعد الظهر (12:00 – 16:00)</option>
+                  <option>مساء (16:00 – 20:00)</option>
+                  <option>أي وقت اليوم</option>
+                </select>
+              </div>
+
+              <input type="hidden" name="traffic_source" class="traffic_source">
+              <input type="hidden" name="utm_source" class="utm_source">
+              <input type="hidden" name="utm_medium" class="utm_medium">
+              <input type="hidden" name="utm_campaign" class="utm_campaign">
+              <input type="hidden" name="utm_content" class="utm_content">
+              <input type="hidden" name="utm_term" class="utm_term">
+              <input type="hidden" name="ad_id" class="ad_id">
+              <input type="hidden" name="landing_version" value="sales_v3_social_proof_top">
+
+              <div class="full">
+                <button class="btn submitBtn" type="submit">نعم أريد التسجيل لمعرفة المزيد 👈</button>
+                <div class="note">
+                  بعد إرسال الطلب، أحد أعضاء الفريق يتصل بك ويفهمك كامل التفاصيل.
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+          <div class="thank thankYou">
+            ✅ تم استلام طلبك بنجاح.<br>
+            راح يتواصل معاك واحد من الفريق قريباً.<br><br>
+            ⚠️ خليك قريب من الهاتف، لأننا راح نشرحلك التفاصيل ونشوفو إذا البرنامج مناسب لك.
+          </div>
         </div>
       </div>
 
@@ -475,7 +589,8 @@
         </div>
       </div>
 
-      <div class="section" id="apply">
+      <!-- 2. نموذج جمع المعلومات السفلي -->
+      <div class="section form-section-block" id="apply">
         <h2>سجل معلوماتك</h2>
         <p>
           بعد ما تترك معلوماتك، راح يتصل بك أحد أعضاء الفريق لشرح التفاصيل
@@ -484,25 +599,25 @@
 
         <div class="divider"></div>
 
-        <div class="error" id="errorBox"></div>
+        <div class="error errorBox"></div>
 
-        <div id="formWrap">
-          <form id="form" novalidate>
+        <div class="formWrap">
+          <form class="lead-form" novalidate>
             <div class="formGrid">
 
               <div>
-                <label for="fullname">الاسم واللقب *</label>
-                <input id="fullname" name="fullname" type="text" required maxlength="100" placeholder="مثال: محمد بن..." autocomplete="name">
+                <label>الاسم واللقب *</label>
+                <input name="fullname" type="text" required maxlength="100" placeholder="مثال: محمد بن..." autocomplete="name">
               </div>
 
               <div>
-                <label for="phone">رقم الهاتف *</label>
-                <input id="phone" name="phone" type="tel" required inputmode="tel" maxlength="20" placeholder="05xxxxxxxx / +213xxxxxxxxx" autocomplete="tel">
+                <label>رقم الهاتف *</label>
+                <input name="phone" type="tel" required inputmode="tel" maxlength="20" placeholder="05xxxxxxxx / +213xxxxxxxxx" autocomplete="tel">
               </div>
 
               <div class="full">
-                <label for="profile_type">ماذا تعمل في الوقت الحالي؟ *</label>
-                <select id="profile_type" name="profile_type" required>
+                <label>ماذا تعمل في الوقت الحالي؟ *</label>
+                <select name="profile_type" required>
                   <option value="" selected disabled>اختار</option>
                   <option value="business_owner">عندي بزنس</option>
                   <option value="salesperson">أعمل في المبيعات</option>
@@ -512,13 +627,13 @@
               </div>
 
               <div class="full">
-                <label for="offer_type">وش تبيع؟ *</label>
-                <input id="offer_type" name="offer_type" type="text" required maxlength="120" placeholder="مثال: ملابس / خدمات / دورات / عقارات / منتجات تجميل...">
+                <label>وش تبيع؟ *</label>
+                <input name="offer_type" type="text" required maxlength="120" placeholder="مثال: ملابس / خدمات / دورات / عقارات / منتجات تجميل...">
               </div>
 
               <div class="full">
-                <label for="daily_leads">كم عدد الزبائن المهتمين اللي يهدروا معاك يومياً؟ *</label>
-                <select id="daily_leads" name="daily_leads" required>
+                <label>كم عدد الزبائن المهتمين اللي يهدروا معاك يومياً؟ *</label>
+                <select name="daily_leads" required>
                   <option value="" selected disabled>اختار</option>
                   <option value="less_5">أقل من 5</option>
                   <option value="5_20">من 5 إلى 20</option>
@@ -527,8 +642,8 @@
               </div>
 
               <div class="full">
-                <label for="main_problem">ما هو أكبر مشكل عندك في البيع حالياً؟ *</label>
-                <select id="main_problem" name="main_problem" required>
+                <label>ما هو أكبر مشكل عندك في البيع حالياً؟ *</label>
+                <select name="main_problem" required>
                   <option value="" selected disabled>اختار</option>
                   <option value="price_objection">الزبائن يقولو السعر غالي</option>
                   <option value="think_about_it">الزبائن يقولو نخمم ونرجعلك</option>
@@ -540,8 +655,8 @@
               </div>
 
               <div class="full">
-                <label for="investment_ready">إذا تأكدت بأن هذه الدورة مناسبة لك وتساعدك في زيادة مبيعاتك، هل أنت مستعد تشتريها؟ *</label>
-                <select id="investment_ready" name="investment_ready" required>
+                <label>إذا تأكدت بأن هذه الدورة مناسبة لك وتساعدك في زيادة مبيعاتك، هل أنت مستعد تشتريها؟ *</label>
+                <select name="investment_ready" required>
                   <option value="" selected disabled>اختار</option>
                   <option value="buy_now">نعم، جاهز إذا فيها نتائج</option>
                   <option value="need_info">نعم لكن أحتاج أفهم التفاصيل</option>
@@ -551,27 +666,27 @@
               </div>
 
               <div class="full">
-                <label for="best_call_time">ما هو الوقت المناسب للاتصال بك؟ *</label>
-                <select id="best_call_time" name="best_call_time" required>
+                <label>ما هو الوقت المناسب للاتصال بك؟ *</label>
+                <select name="best_call_time" required>
                   <option value="" selected disabled>اختار</option>
                   <option>صباح (09:00 – 12:00)</option>
-                  <option>بعد הظهر (12:00 – 16:00)</option>
+                  <option>بعد الظهر (12:00 – 16:00)</option>
                   <option>مساء (16:00 – 20:00)</option>
                   <option>أي وقت اليوم</option>
                 </select>
               </div>
 
-              <input type="hidden" name="traffic_source" id="traffic_source">
-              <input type="hidden" name="utm_source" id="utm_source">
-              <input type="hidden" name="utm_medium" id="utm_medium">
-              <input type="hidden" name="utm_campaign" id="utm_campaign">
-              <input type="hidden" name="utm_content" id="utm_content">
-              <input type="hidden" name="utm_term" id="utm_term">
-              <input type="hidden" name="ad_id" id="ad_id">
-              <input type="hidden" name="landing_version" value="sales_v3_social_proof">
+              <input type="hidden" name="traffic_source" class="traffic_source">
+              <input type="hidden" name="utm_source" class="utm_source">
+              <input type="hidden" name="utm_medium" class="utm_medium">
+              <input type="hidden" name="utm_campaign" class="utm_campaign">
+              <input type="hidden" name="utm_content" class="utm_content">
+              <input type="hidden" name="utm_term" class="utm_term">
+              <input type="hidden" name="ad_id" class="ad_id">
+              <input type="hidden" name="landing_version" value="sales_v3_social_proof_bottom">
 
               <div class="full">
-                <button class="btn" id="submitBtn" type="submit">نعم أريد التسجيل لمعرفة المزيد 👈</button>
+                <button class="btn submitBtn" type="submit">نعم أريد التسجيل لمعرفة المزيد 👈</button>
                 <div class="note">
                   بعد إرسال الطلب، أحد أعضاء الفريق يتصل بك ويفهمك كامل التفاصيل.
                 </div>
@@ -580,7 +695,7 @@
             </div>
           </form>
 
-          <div class="thank" id="thankYou">
+          <div class="thank thankYou">
             ✅ تم استلام طلبك بنجاح.<br>
             راح يتواصل معاك واحد من الفريق قريباً.<br><br>
             ⚠️ خليك قريب من الهاتف، لأننا راح نشرحلك التفاصيل ونشوفو إذا البرنامج مناسب لك.
@@ -601,14 +716,7 @@
   </div>
 
   <script>
-    const form = document.getElementById("form");
-    const thankYou = document.getElementById("thankYou");
-    const errorBox = document.getElementById("errorBox");
-    const submitBtn = document.getElementById("submitBtn");
-
     const scriptURL = "https://script.google.com/macros/s/AKfycbxUVtHd5iUJXn72xerrs_NmyhYBw4X4Q_UCfQ8oSw0Hf_k6mpzQdvxeQ3en49DcVbFhmg/exec";
-
-    let isSubmitting = false;
 
     function trackCtaClick() {
       if (typeof fbq === "function") {
@@ -616,18 +724,6 @@
       }
     }
 
-    function showError(msg) {
-      errorBox.textContent = msg;
-      errorBox.style.display = "block";
-      errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-
-    function hideError() {
-      errorBox.textContent = "";
-      errorBox.style.display = "none";
-    }
-
-    // تحسين معالجة الهواتف الجزائرية تلقائياً
     function normalizePhone(value) {
       let cleaned = String(value || "").trim().replace(/[^\d+]/g, "");
       if (/^0[567]\d{8}$/.test(cleaned)) {
@@ -640,66 +736,14 @@
       return /^\+?\d{8,15}$/.test(phone);
     }
 
-    function getFieldValue(id) {
-      const el = document.getElementById(id);
-      return el ? String(el.value || "").trim() : "";
-    }
-
-    function validateForm() {
-      const fullname = getFieldValue("fullname");
-      const rawPhone = getFieldValue("phone");
-      const phone = normalizePhone(rawPhone);
-      const profile_type = getFieldValue("profile_type");
-      const offer_type = getFieldValue("offer_type");
-      const daily_leads = getFieldValue("daily_leads");
-      const main_problem = getFieldValue("main_problem");
-      const investment_ready = getFieldValue("investment_ready");
-      const best_call_time = getFieldValue("best_call_time");
-
-      if (!fullname || !rawPhone || !profile_type || !offer_type || !daily_leads || !main_problem || !investment_ready || !best_call_time) {
-        showError("⚠️ عمّر الخانات الإلزامية كامل من فضلك.");
-        return false;
-      }
-
-      if (fullname.length < 3) {
-        showError("⚠️ الاسم واللقب لازم يكون واضح.");
-        return false;
-      }
-
-      if (!isValidPhone(phone)) {
-        showError("⚠️ رقم الهاتف غير صالح. استعمل صيغة صحيحة مثل 0550xxxxxx أو +213xxxxxxxxx");
-        return false;
-      }
-
-      if (profile_type === "other") {
-        showError("⚠️ هذا البرنامج موجه لأصحاب المشاريع أو الناس اللي تعمل في المبيعات حالياً.");
-        return false;
-      }
-
-      if (offer_type.length < 3) {
-        showError("⚠️ اكتب واش تبيع بشكل واضح.");
-        return false;
-      }
-
-      document.getElementById("phone").value = phone;
-      return true;
-    }
-
+    // إعداد الـ UTMs ومصادر الترافيك لجميع النماذج
     (function fillTracking() {
       const qs = new URLSearchParams(window.location.search);
-
-      const fields = [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_content",
-        "utm_term",
-        "ad_id"
-      ];
+      const fields = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "ad_id"];
 
       fields.forEach(function(field) {
-        const input = document.getElementById(field);
-        if (input) input.value = qs.get(field) || "";
+        const val = qs.get(field) || "";
+        document.querySelectorAll("." + field).forEach(el => el.value = val);
       });
 
       let source = "direct";
@@ -711,87 +755,150 @@
       else if (us.includes("google")) source = "google";
       else if (document.referrer) source = "referral";
 
-      const trafficInput = document.getElementById("traffic_source");
-      if (trafficInput) trafficInput.value = source;
+      document.querySelectorAll(".traffic_source").forEach(el => el.value = source);
     })();
 
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
+    // تفعيل إرسال النموذج لكل من البلوك العلوي والسفلي
+    document.querySelectorAll(".form-section-block").forEach(function(block) {
+      const form = block.querySelector(".lead-form");
+      const thankYou = block.querySelector(".thankYou");
+      const errorBox = block.querySelector(".errorBox");
+      const submitBtn = block.querySelector(".submitBtn");
 
-      if (isSubmitting) return;
+      let isSubmitting = false;
 
-      hideError();
+      function showError(msg) {
+        errorBox.textContent = msg;
+        errorBox.style.display = "block";
+        errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
 
-      if (!validateForm()) return;
+      function hideError() {
+        errorBox.textContent = "";
+        errorBox.style.display = "none";
+      }
 
-      const investment_ready = getFieldValue("investment_ready");
-      const daily_leads = getFieldValue("daily_leads");
+      function getVal(name) {
+        const el = form.querySelector(`[name="${name}"]`);
+        return el ? String(el.value || "").trim() : "";
+      }
 
-      isSubmitting = true;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "…جاري الإرسال";
+      function validate() {
+        const fullname = getVal("fullname");
+        const rawPhone = getVal("phone");
+        const phone = normalizePhone(rawPhone);
+        const profile_type = getVal("profile_type");
+        const offer_type = getVal("offer_type");
+        const daily_leads = getVal("daily_leads");
+        const main_problem = getVal("main_problem");
+        const investment_ready = getVal("investment_ready");
+        const best_call_time = getVal("best_call_time");
 
-      const controller = new AbortController();
-      const timeoutId = setTimeout(function() {
-        controller.abort();
-      }, 20000);
+        if (!fullname || !rawPhone || !profile_type || !offer_type || !daily_leads || !main_problem || !investment_ready || !best_call_time) {
+          showError("⚠️ عمّر الخانات الإلزامية كامل من فضلك.");
+          return false;
+        }
 
-      try {
-        const formData = new FormData(form);
+        if (fullname.length < 3) {
+          showError("⚠️ الاسم واللقب لازم يكون واضح.");
+          return false;
+        }
 
-        const response = await fetch(scriptURL, {
-          method: "POST",
-          body: formData,
-          signal: controller.signal
-        });
+        if (!isValidPhone(phone)) {
+          showError("⚠️ رقم الهاتف غير صالح. استعمل صيغة صحيحة مثل 0550xxxxxx أو +213xxxxxxxxx");
+          return false;
+        }
 
-        let data = null;
+        if (profile_type === "other") {
+          showError("⚠️ هذا البرنامج موجه لأصحاب المشاريع أو الناس اللي تعمل في المبيعات حالياً.");
+          return false;
+        }
+
+        if (offer_type.length < 3) {
+          showError("⚠️ اكتب واش تبيع بشكل واضح.");
+          return false;
+        }
+
+        form.querySelector('[name="phone"]').value = phone;
+        return true;
+      }
+
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        if (isSubmitting) return;
+
+        hideError();
+        if (!validate()) return;
+
+        const investment_ready = getVal("investment_ready");
+        const daily_leads = getVal("daily_leads");
+
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "…جاري الإرسال";
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 20000);
 
         try {
-          data = await response.json();
-        } catch (jsonErr) {
-          throw new Error("Invalid server response");
-        }
+          const formData = new FormData(form);
 
-        if (!response.ok || !data || data.status !== "ok") {
-          throw new Error((data && data.message) ? data.message : "Submit failed");
-        }
+          const response = await fetch(scriptURL, {
+            method: "POST",
+            body: formData,
+            signal: controller.signal
+          });
 
-        // --- Meta Pixel Tracking (Lead Filtered) ---
-        if (typeof fbq === "function") {
-          const isProspect = ["buy_now", "need_info"].includes(investment_ready);
+          let data = null;
+          const responseText = await response.text();
 
-          if (isProspect) {
-            const isHighIntent = ["5_20", "more_20"].includes(daily_leads);
-
-            fbq("track", "Lead", {
-              content_name: isHighIntent ? "High Intent Prospect" : "Standard Prospect",
-              value: isHighIntent ? 2.00 : 1.00,
-              currency: "USD"
-            });
+          try {
+            data = JSON.parse(responseText);
+          } catch (jsonErr) {
+            if (response.ok || response.type === "opaque") {
+              data = { status: "ok" };
+            } else {
+              throw new Error("Invalid server response");
+            }
           }
+
+          if (data && data.status === "error") {
+            throw new Error(data.message || "Submit failed");
+          }
+
+          // تتبع Meta Pixel
+          if (typeof fbq === "function") {
+            const isProspect = ["buy_now", "need_info"].includes(investment_ready);
+            if (isProspect) {
+              const isHighIntent = ["5_20", "more_20"].includes(daily_leads);
+              fbq("track", "Lead", {
+                content_name: isHighIntent ? "High Intent Prospect" : "Standard Prospect",
+                value: isHighIntent ? 2.00 : 1.00,
+                currency: "USD"
+              });
+            }
+          }
+
+          form.style.display = "none";
+          thankYou.style.display = "block";
+          block.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        } catch (err) {
+          console.error(err);
+          if (err.name === "AbortError") {
+            showError("انتهت مهلة الإرسال. تأكد من الإنترنت وعاود جرّب.");
+          } else if (String(err.message || "").toLowerCase().includes("already exists")) {
+            showError("هذا الرقم مسجل من قبل. إذا حاب، راجع الفريق مباشرة.");
+          } else {
+            showError("فشل الإرسال. عاود جرّب من فضلك.");
+          }
+        } finally {
+          clearTimeout(timeoutId);
+          isSubmitting = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = "نعم أريد التسجيل لمعرفة المزيد 👈";
         }
-
-        form.style.display = "none";
-        thankYou.style.display = "block";
-        document.getElementById("apply").scrollIntoView({ behavior:"smooth", block:"start" });
-
-      } catch (err) {
-        console.error(err);
-
-        if (err.name === "AbortError") {
-          showError("انتهت مهلة الإرسال. تأكد من الإنترنت وعاود جرّب.");
-        } else if (String(err.message || "").toLowerCase().includes("already exists")) {
-          showError("هذا الرقم مسجل من قبل. إذا حاب، راجع الفريق مباشرة.");
-        } else {
-          showError("فشل الإرسال. عاود جرّب من فضلك.");
-        }
-      } finally {
-        clearTimeout(timeoutId);
-        isSubmitting = false;
-        submitBtn.disabled = false;
-        submitBtn.textContent = "نعم أريد التسجيل لمعرفة المزيد 👈";
-      }
+      });
     });
   </script>
 </body>
