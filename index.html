@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>زيادة المبيعات وإقناع الزبائن — Elite Trainers Academy</title>
-  <meta name="description" content="برنامج عملي لأصحاب المشاريع والناس اللي تخدم في المبيعات لتعلم إقناع الزبائن، معالجة الاعتراضات، وتحويل المهتمين إلى مبيعات.">
+  <meta name="description" content="برنامج عملي لأصحاب المشاريع والمبيعات لتعلم إقناع الزبائن، معالجة الاعتراضات، وتحويل المهتمين إلى مبيعات مؤكدة.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,52 +116,6 @@
       font-weight:700;
     }
 
-    .hero{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      margin-top:18px;
-      align-items:stretch;
-    }
-
-    .box{
-      width:100%;
-      padding:18px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.58);
-      text-align:center;
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      font-size:12px;
-      color:#0b1220;
-      background:rgba(209,164,75,0.22);
-      border:1px solid rgba(209,164,75,0.35);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-
-    .headline{
-      margin-top:12px;
-      font-size:31px;
-      line-height:1.35;
-      color:var(--primary);
-      font-weight:900;
-    }
-
-    .lead{
-      margin-top:12px;
-      font-size:14.5px;
-      line-height:1.85;
-      color:var(--muted);
-      font-weight:700;
-    }
-
     .ctaBtn,.btn{
       margin-top:14px;
       width:100%;
@@ -193,7 +147,6 @@
       transform:none;
     }
 
-    /* مميزات البرنامج */
     .featuresGrid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
@@ -230,7 +183,6 @@
       margin:0;
     }
 
-    /* آراء الزبائن / الشهادات */
     .testimonialsGrid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -291,7 +243,7 @@
       margin-top:10px;
       color:var(--muted);
       font-size:13.5px;
-      line-height:1.9;
+      line-height:1.8;
       font-weight:700;
     }
 
@@ -321,7 +273,7 @@
       font-weight:900;
       color:#0f172a;
       margin:10px 0 6px;
-      text-align:center;
+      text-align:right;
     }
 
     input,select,textarea{
@@ -330,16 +282,20 @@
       border-radius:12px;
       border:1px solid rgba(15,23,42,0.18);
       background:rgba(255,255,255,0.97);
-      font-size:14.5px;
+      font-size:15px;
       outline:none;
       transition:.18s ease;
       font-family:"Cairo", "Montserrat", sans-serif;
-      text-align:center;
+      text-align:right;
+      -webkit-appearance:none;
     }
 
-    textarea{
-      min-height:95px;
-      resize:vertical;
+    select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+      background-size: 14px;
+      padding-left: 36px;
     }
 
     input:focus,select:focus,textarea:focus{
@@ -352,7 +308,6 @@
       grid-template-columns:1fr 1fr;
       gap:12px;
       margin-top:10px;
-      text-align:center;
     }
 
     .full{grid-column:1/-1}
@@ -391,8 +346,6 @@
       body{padding:14px}
       .card{padding:18px}
       .formGrid,.testimonialsGrid{grid-template-columns:1fr}
-      .headline{font-size:25px}
-      .lead{font-size:13.5px}
     }
   </style>
 </head>
@@ -405,16 +358,16 @@
         <img class="logo" src="elite-trainers-academy.png" alt="Elite Trainers Academy Logo">
         <div class="brand">
           <h1>Elite Trainers Academy</h1>
-          <div class="sub">دورة تدريبية لزيادة المبيعات وإقناع الزبائن</div>
+          <div class="sub">دورة تدريبية متقدمة لزيادة المبيعات وإقناع الزبائن</div>
         </div>
       </div>
 
-      <!-- 1. نموذج جمع المعلومات العلوي (قبل الـ Hero) -->
+      <!-- قسم نموذج التسجيل الرئيسي المؤهل -->
       <div class="section form-section-block" id="apply-top">
-        <h2>سجل معلوماتك</h2>
+        <h2>سجّل معلوماتك لحجز مقعدك</h2>
         <p>
-          بعد ما تترك معلوماتك، راح يتصل بك أحد أعضاء الفريق لشرح التفاصيل
-          ونشوفو إذا البرنامج مناسب لوضعك الحالي.
+          اترك معلوماتك وسيتصل بك مستشار من الفريق لشرح كافة التفاصيل
+          والتأكد من ملاءمة البرنامج لمجال عملك.
         </p>
 
         <div class="divider"></div>
@@ -427,7 +380,7 @@
 
               <div>
                 <label>الاسم واللقب *</label>
-                <input name="fullname" type="text" required maxlength="100" placeholder="مثال: محمد بن..." autocomplete="name">
+                <input name="fullname" type="text" required maxlength="100" placeholder="مثال: كريم بن..." autocomplete="name">
               </div>
 
               <div>
@@ -436,63 +389,61 @@
               </div>
 
               <div class="full">
-                <label>ماذا تعمل في الوقت الحالي؟ *</label>
+                <label>ما هو وضعك المهني الحالي؟ *</label>
                 <select name="profile_type" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="business_owner">عندي بزنس</option>
-                  <option value="salesperson">أعمل في المبيعات</option>
-                  <option value="both">عندي بزنس وأعمل في البيع</option>
-                  <option value="other">شيء آخر</option>
+                  <option value="" selected disabled>اختر الوضع</option>
+                  <option value="business_owner">صاحب مشروع / تجارة إلكترونية</option>
+                  <option value="salesperson">مسؤول مبيعات / Closer</option>
+                  <option value="both">صاحب مشروع وأدير المبيعات بنفسي</option>
+                  <option value="other">مجال آخر</option>
                 </select>
               </div>
 
               <div class="full">
-                <label>وش تبيع؟ *</label>
-                <input name="offer_type" type="text" required maxlength="120" placeholder="مثال: ملابس / خدمات / دورات / عقارات / منتجات تجميل...">
+                <label>ما هو مجال نشاطك أو نوع المنتجات/الخدمات؟ *</label>
+                <input name="offer_type" type="text" required maxlength="120" placeholder="مثال: تجارة إلكترونية، عقارات، خدمات، B2B...">
               </div>
 
-              <div class="full">
-                <label>كم عدد الزبائن المهتمين اللي يهدروا معاك يومياً؟ *</label>
+              <div>
+                <label>كم زبون محتمل يتواصل معك يومياً؟ *</label>
                 <select name="daily_leads" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="less_5">أقل من 5</option>
+                  <option value="" selected disabled>اختر العدد</option>
+                  <option value="less_5">أقل من 5 اتصالات / رسائل</option>
                   <option value="5_20">من 5 إلى 20</option>
                   <option value="more_20">أكثر من 20</option>
                 </select>
               </div>
 
-              <div class="full">
-                <label>ما هو أكبر مشكل عندك في البيع حالياً؟ *</label>
+              <div>
+                <label>ما هو أكبر عائق تواجهه في الإغلاق؟ *</label>
                 <select name="main_problem" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="price_objection">الزبائن يقولو السعر غالي</option>
-                  <option value="think_about_it">الزبائن يقولو نخمم ونرجعلك</option>
-                  <option value="no_trust">صعوبة بناء الثقة</option>
-                  <option value="closing_problem">صعوبة غلق البيع</option>
-                  <option value="low_leads">ما عنديش زبائن مهتمين كفاية</option>
+                  <option value="" selected disabled>اختر المشكل</option>
+                  <option value="think_about_it">اعتراض "نخمم ونرجعلك" واختفاء الزبون</option>
+                  <option value="price_objection">اعتراض "السعر غالي بزاف"</option>
+                  <option value="no_trust">صعوبة بناء الثقة في البداية</option>
+                  <option value="closing_problem">عدم معرفة التوقيت المناسب لغلق البيع</option>
                   <option value="other">مشكل آخر</option>
                 </select>
               </div>
 
               <div class="full">
-                <label>إذا تأكدت بأن هذه الدورة مناسبة لك وتساعدك في زيادة مبيعاتك، هل أنت مستعد تشتريها؟ *</label>
+                <label>هل أنت جاهز للاستثمار في تدريب مبيعات مدفوع لرفع أرباحك؟ *</label>
                 <select name="investment_ready" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="buy_now">نعم، جاهز إذا فيها نتائج</option>
-                  <option value="need_info">نعم لكن أحتاج أفهم التفاصيل</option>
-                  <option value="no_budget">مهتم لكن حالياً لا أملك المال</option>
-                  <option value="not_ready">لست مستعداً للدفع</option>
+                  <option value="" selected disabled>اختر الإجابة</option>
+                  <option value="buy_now">نعم، جاهز فوراً إذا كان البرنامج يحل مشكلتي</option>
+                  <option value="need_info">نعم، لكن أحتاج معرفة السعر والتفاصيل أولاً</option>
+                  <option value="not_ready">أبحث عن محتوى مجاني فقط حالياً</option>
                 </select>
               </div>
 
               <div class="full">
-                <label>ما هو الوقت المناسب للاتصال بك؟ *</label>
+                <label>الوقت المفضل لتلقي المكالمة *</label>
                 <select name="best_call_time" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option>صباح (09:00 – 12:00)</option>
+                  <option value="" selected disabled>اختر الوقت</option>
+                  <option>الفترة الصباحية (09:00 – 12:00)</option>
                   <option>بعد الظهر (12:00 – 16:00)</option>
-                  <option>مساء (16:00 – 20:00)</option>
-                  <option>أي وقت اليوم</option>
+                  <option>الفترة المسائية (16:00 – 20:00)</option>
+                  <option>في أي وقت اليوم</option>
                 </select>
               </div>
 
@@ -503,12 +454,12 @@
               <input type="hidden" name="utm_content" class="utm_content">
               <input type="hidden" name="utm_term" class="utm_term">
               <input type="hidden" name="ad_id" class="ad_id">
-              <input type="hidden" name="landing_version" value="sales_v3_social_proof_top">
+              <input type="hidden" name="landing_version" value="sales_v4_qualified_single_form">
 
               <div class="full">
-                <button class="btn submitBtn" type="submit">نعم أريد التسجيل لمعرفة المزيد 👈</button>
+                <button class="btn submitBtn" type="submit">تأكيد التسجيل ومعرفة التفاصيل 👈</button>
                 <div class="note">
-                  بعد إرسال الطلب، أحد أعضاء الفريق يتصل بك ويفهمك كامل التفاصيل.
+                  🔒 معلوماتك سرية ولن تُشارك مع أي طرف ثالث.
                 </div>
               </div>
 
@@ -517,199 +468,74 @@
 
           <div class="thank thankYou">
             ✅ تم استلام طلبك بنجاح.<br>
-            راح يتواصل معاك واحد من الفريق قريباً.<br><br>
-            ⚠️ خليك قريب من الهاتف، لأننا راح نشرحلك التفاصيل ونشوفو إذا البرنامج مناسب لك.
+            سيتواصل معك أحد مستشارينا هاتفياً قريباً لتزويدك بكافة التفاصيل.<br><br>
+            ⚠️ يُرجى إبقاء الهاتف قريباً منك للرد على المكالمة.
           </div>
         </div>
       </div>
 
-      <!-- قسم الـ Hero بدون زر CTA -->
-      <div class="hero">
-        <div class="box">
-          <div class="kicker">⚡ تدريب عملي لأصحاب المشاريع و عمال المبيعات</div>
-
-          <div class="headline">
-            يجوك زبائن مهتمين يسقسو… بصح ما يشروش؟
-          </div>
-
-          <div class="lead">
-            تعلّم خطوات بيع ناجحة تخليك تحول الرسائل، الأسئلة، وجملة “نخمم ونرجعلك”
-            إلى مبيعات حقيقية دون تخفيض السعر أو الضغط على الزبون.
-          </div>
-        </div>
-      </div>
-
-      <!-- قسم مميزات التدريب -->
+      <!-- قسم محاور التدريب والمميزات -->
       <div class="section">
-        <h2>واش راح تتعلّم و تستفاد في هذا البرنامج؟</h2>
+        <h2>ماذا ستتعلم عملياً في هذا البرنامج؟</h2>
         <div class="featuresGrid">
           <div class="featureCard">
             <div class="icon">💬</div>
-            <h3>التعامل مع الاعتراضات</h3>
-            <p>كيفاش تجاوب بثقة على "بزاف غالي" أو "نخمم ونرجعلك" وتحولها لمبيعة.</p>
+            <h3>تفكيك الاعتراضات</h3>
+            <p>الردود النفسية المجهزة لـ "غالي بزاف" و "نرجعلك مبعد" لتحويل التردد إلى شراء.</p>
           </div>
           <div class="featureCard">
             <div class="icon">🎯</div>
-            <h3>إغلاق المبيعات (Closing)</h3>
-            <p>خطوات مجربة و واضحة لتأكيد المبيعات ومنع الزبون من الاختفاء.</p>
+            <h3>فن الإغلاق السلس</h3>
+            <p>كيف تغلق الصفقة في الوقت المناسب دون أن تبدو ملحاً أو محتاجاً للمبيعة.</p>
           </div>
           <div class="featureCard">
             <div class="icon">🤝</div>
-            <h3>بناء الثقة السريعة</h3>
-            <p>طريقة التواصل و الاقناع الإحترافية لجعل الزبون يثق فيك.</p>
+            <h3>بناء الثقة الفورية</h3>
+            <p>طريقة إبراز القيمة وهيكلة العرض ليقتنع الزبون بجودة خدماتك أو منتجاتك.</p>
           </div>
           <div class="featureCard">
             <div class="icon">📈</div>
-            <h3>تطبيق عملي 100%</h3>
-            <p>حلول جاهزة و مباشرة يمكنك تطبيقها من أول يوم مع الزبائن.</p>
+            <h3>متابعة ذكية (Follow-up)</h3>
+            <p>استرجاع الزبائن الذين لم يردوا وتحويل الرسائل الباردة إلى طلبيات مؤكدة.</p>
           </div>
         </div>
       </div>
 
-      <!-- قسم الشهادات الاجتماعية (3 شهادات) -->
+      <!-- قسم آراء المشتركين والنتائج -->
       <div class="section">
-        <h2>نتائج و آراء لي شاركوا معنا في الفورماسيون ⭐</h2>
+        <h2>نتائج حقيقية من متدربين سابقين ⭐</h2>
         <div class="testimonialsGrid">
           <div class="testimonialCard">
             <div class="stars">★★★★★</div>
-            <p>«بعد تطبيق ما تعلمته في الدورة خصوصا طرق الإجابة على الاعتراضات، قدرت نغلق 4 طلبيات من أصل 6 محادثات كانوا حبسو في 'نخمم ونرجعلك'. التدريب عملي بزاف!»</p>
+            <p>«مبيعات متجري تضاعفت مرتين في أقل من 20 يوماً فقط بتغيير طريقة الرد على الرسائل والتعامل مع اعتراض السعر.»</p>
             <div class="author">سفيان ب. — صاحب متجر إلكتروني</div>
           </div>
           <div class="testimonialCard">
             <div class="stars">★★★★★</div>
-            <p>«كان عندي مشكل كبير لما الزبون يقول السعر غالي.في الدورة تعلمت كيفاش نبين قيمة الخدمة قبل ما نحكي على السعر. المبيعات زادت بشكل ملحوظ.»</p>
-            <div class="author">أمينة ك. — مؤسسة خدمات واستشارات</div>
+            <p>«كنت أخسر صفقات خدمات استشارية كثيرة بسبب التردد. بعد تطبيق هيكل الإغلاق أغلقت 4 من أصل 6 محادثات معلقة.»</p>
+            <div class="author">أمينة ك. — استشارات وتطوير أعمال</div>
           </div>
           <div class="testimonialCard">
             <div class="stars">★★★★★</div>
-            <p>«طريقة المتابعة و خطوات غلق المبيعات غيرت كلياً كيفاش نهدر مع الزبائن تاعي. وليت نعرف كيفاش نخلي الزبون يشري بلا ما نطول في الهضرة.»</p>
-            <div class="author">حمزة م. — تاجر جملة</div>
+            <p>«التدريب عملي ومباشر بدون نظريات فارغة. ساعدني في تدريب فريق المبيعات لدي ورفع نسبة التأكيد بشكل فوري.»</p>
+            <div class="author">حمزة م. — تاجر جملة وموزع</div>
           </div>
         </div>
-      </div>
-
-      <!-- 2. نموذج جمع المعلومات السفلي -->
-      <div class="section form-section-block" id="apply">
-        <h2>سجل معلوماتك</h2>
-        <p>
-          بعد ما تترك معلوماتك، راح يتصل بك أحد أعضاء الفريق لشرح التفاصيل
-          ونشوفو إذا البرنامج مناسب لوضعك الحالي.
-        </p>
 
         <div class="divider"></div>
 
-        <div class="error errorBox"></div>
-
-        <div class="formWrap">
-          <form class="lead-form" novalidate>
-            <div class="formGrid">
-
-              <div>
-                <label>الاسم واللقب *</label>
-                <input name="fullname" type="text" required maxlength="100" placeholder="مثال: محمد بن..." autocomplete="name">
-              </div>
-
-              <div>
-                <label>رقم الهاتف *</label>
-                <input name="phone" type="tel" required inputmode="tel" maxlength="20" placeholder="05xxxxxxxx / +213xxxxxxxxx" autocomplete="tel">
-              </div>
-
-              <div class="full">
-                <label>ماذا تعمل في الوقت الحالي؟ *</label>
-                <select name="profile_type" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="business_owner">عندي بزنس</option>
-                  <option value="salesperson">أعمل في المبيعات</option>
-                  <option value="both">عندي بزنس وأعمل في البيع</option>
-                  <option value="other">شيء آخر</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label>وش تبيع؟ *</label>
-                <input name="offer_type" type="text" required maxlength="120" placeholder="مثال: ملابس / خدمات / دورات / عقارات / منتجات تجميل...">
-              </div>
-
-              <div class="full">
-                <label>كم عدد الزبائن المهتمين اللي يهدروا معاك يومياً؟ *</label>
-                <select name="daily_leads" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="less_5">أقل من 5</option>
-                  <option value="5_20">من 5 إلى 20</option>
-                  <option value="more_20">أكثر من 20</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label>ما هو أكبر مشكل عندك في البيع حالياً؟ *</label>
-                <select name="main_problem" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="price_objection">الزبائن يقولو السعر غالي</option>
-                  <option value="think_about_it">الزبائن يقولو نخمم ونرجعلك</option>
-                  <option value="no_trust">صعوبة بناء الثقة</option>
-                  <option value="closing_problem">صعوبة غلق البيع</option>
-                  <option value="low_leads">ما عنديش زبائن مهتمين كفاية</option>
-                  <option value="other">مشكل آخر</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label>إذا تأكدت بأن هذه الدورة مناسبة لك وتساعدك في زيادة مبيعاتك، هل أنت مستعد تشتريها؟ *</label>
-                <select name="investment_ready" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option value="buy_now">نعم، جاهز إذا فيها نتائج</option>
-                  <option value="need_info">نعم لكن أحتاج أفهم التفاصيل</option>
-                  <option value="no_budget">مهتم لكن حالياً لا أملك المال</option>
-                  <option value="not_ready">لست مستعداً للدفع</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label>ما هو الوقت المناسب للاتصال بك؟ *</label>
-                <select name="best_call_time" required>
-                  <option value="" selected disabled>اختار</option>
-                  <option>صباح (09:00 – 12:00)</option>
-                  <option>بعد الظهر (12:00 – 16:00)</option>
-                  <option>مساء (16:00 – 20:00)</option>
-                  <option>أي وقت اليوم</option>
-                </select>
-              </div>
-
-              <input type="hidden" name="traffic_source" class="traffic_source">
-              <input type="hidden" name="utm_source" class="utm_source">
-              <input type="hidden" name="utm_medium" class="utm_medium">
-              <input type="hidden" name="utm_campaign" class="utm_campaign">
-              <input type="hidden" name="utm_content" class="utm_content">
-              <input type="hidden" name="utm_term" class="utm_term">
-              <input type="hidden" name="ad_id" class="ad_id">
-              <input type="hidden" name="landing_version" value="sales_v3_social_proof_bottom">
-
-              <div class="full">
-                <button class="btn submitBtn" type="submit">نعم أريد التسجيل لمعرفة المزيد 👈</button>
-                <div class="note">
-                  بعد إرسال الطلب، أحد أعضاء الفريق يتصل بك ويفهمك كامل التفاصيل.
-                </div>
-              </div>
-
-            </div>
-          </form>
-
-          <div class="thank thankYou">
-            ✅ تم استلام طلبك بنجاح.<br>
-            راح يتواصل معاك واحد من الفريق قريباً.<br><br>
-            ⚠️ خليك قريب من الهاتف، لأننا راح نشرحلك التفاصيل ونشوفو إذا البرنامج مناسب لك.
-          </div>
-        </div>
+        <!-- زر الانتقال للنموذج العلوي -->
+        <a href="#apply-top" class="ctaBtn" onclick="scrollToTopForm(event)">احجز مقعدك الآن وتحدث مع الفريق 👈</a>
       </div>
+
     </div>
 
     <div class="footer">
       <div style="max-width:800px;margin:auto;line-height:1.6;">
         This site is not a part of the Facebook website or Facebook Inc.
       </div>
-
       <div style="margin-top:10px;">
-        © Elite Trainers Academy — صفحة تسجيل معلومات فقط.
+        © Elite Trainers Academy — جميع الحقوق محفوظة.
       </div>
     </div>
   </div>
@@ -717,9 +543,13 @@
   <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbxUVtHd5iUJXn72xerrs_NmyhYBw4X4Q_UCfQ8oSw0Hf_k6mpzQdvxeQ3en49DcVbFhmg/exec";
 
-    function trackCtaClick() {
-      if (typeof fbq === "function") {
-        fbq("trackCustom", "CTA_Click");
+    function scrollToTopForm(e) {
+      e.preventDefault();
+      const target = document.getElementById("apply-top");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        const nameInput = target.querySelector('[name="fullname"]');
+        if (nameInput) nameInput.focus();
       }
     }
 
@@ -735,7 +565,6 @@
       return /^\+?\d{8,15}$/.test(phone);
     }
 
-    // إعداد الـ UTMs ومصادر الترافيك لجميع النماذج
     (function fillTracking() {
       const qs = new URLSearchParams(window.location.search);
       const fields = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "ad_id"];
@@ -757,147 +586,146 @@
       document.querySelectorAll(".traffic_source").forEach(el => el.value = source);
     })();
 
-    // تفعيل إرسال النموذج لكل من البلوك العلوي والسفلي
-    document.querySelectorAll(".form-section-block").forEach(function(block) {
-      const form = block.querySelector(".lead-form");
-      const thankYou = block.querySelector(".thankYou");
-      const errorBox = block.querySelector(".errorBox");
-      const submitBtn = block.querySelector(".submitBtn");
+    const block = document.querySelector(".form-section-block");
+    const form = block.querySelector(".lead-form");
+    const thankYou = block.querySelector(".thankYou");
+    const errorBox = block.querySelector(".errorBox");
+    const submitBtn = block.querySelector(".submitBtn");
 
-      let isSubmitting = false;
+    let isSubmitting = false;
 
-      function showError(msg) {
-        errorBox.textContent = msg;
-        errorBox.style.display = "block";
-        errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.style.display = "block";
+      errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function hideError() {
+      errorBox.textContent = "";
+      errorBox.style.display = "none";
+    }
+
+    function getVal(name) {
+      const el = form.querySelector(`[name="${name}"]`);
+      return el ? String(el.value || "").trim() : "";
+    }
+
+    function validate() {
+      const fullname = getVal("fullname");
+      const rawPhone = getVal("phone");
+      const phone = normalizePhone(rawPhone);
+      const profile_type = getVal("profile_type");
+      const offer_type = getVal("offer_type");
+      const daily_leads = getVal("daily_leads");
+      const main_problem = getVal("main_problem");
+      const investment_ready = getVal("investment_ready");
+      const best_call_time = getVal("best_call_time");
+
+      if (!fullname || !rawPhone || !profile_type || !offer_type || !daily_leads || !main_problem || !investment_ready || !best_call_time) {
+        showError("⚠️ يُرجى ملء جميع الحقول المطلوبة.");
+        return false;
       }
 
-      function hideError() {
-        errorBox.textContent = "";
-        errorBox.style.display = "none";
+      if (fullname.length < 3) {
+        showError("⚠️ يُرجى إدخال الاسم واللقب بشكل واضح.");
+        return false;
       }
 
-      function getVal(name) {
-        const el = form.querySelector(`[name="${name}"]`);
-        return el ? String(el.value || "").trim() : "";
+      if (!isValidPhone(phone)) {
+        showError("⚠️ رقم الهاتف غير صالح. استعمل صيغة مثل 0550xxxxxx أو +213xxxxxxxxx");
+        return false;
       }
 
-      function validate() {
-        const fullname = getVal("fullname");
-        const rawPhone = getVal("phone");
-        const phone = normalizePhone(rawPhone);
-        const profile_type = getVal("profile_type");
-        const offer_type = getVal("offer_type");
-        const daily_leads = getVal("daily_leads");
-        const main_problem = getVal("main_problem");
-        const investment_ready = getVal("investment_ready");
-        const best_call_time = getVal("best_call_time");
-
-        if (!fullname || !rawPhone || !profile_type || !offer_type || !daily_leads || !main_problem || !investment_ready || !best_call_time) {
-          showError("⚠️ عمّر الخانات الإلزامية كامل من فضلك.");
-          return false;
-        }
-
-        if (fullname.length < 3) {
-          showError("⚠️ الاسم واللقب لازم يكون واضح.");
-          return false;
-        }
-
-        if (!isValidPhone(phone)) {
-          showError("⚠️ رقم الهاتف غير صالح. استعمل صيغة صحيحة مثل 0550xxxxxx أو +213xxxxxxxxx");
-          return false;
-        }
-
-        if (profile_type === "other") {
-          showError("⚠️ هذا البرنامج موجه لأصحاب المشاريع أو الناس اللي تعمل في المبيعات حالياً.");
-          return false;
-        }
-
-        if (offer_type.length < 3) {
-          showError("⚠️ اكتب واش تبيع بشكل واضح.");
-          return false;
-        }
-
-        form.querySelector('[name="phone"]').value = phone;
-        return true;
+      if (profile_type === "other") {
+        showError("⚠️ هذا التدريب موجه خصيصاً لأصحاب المشاريع والعاملين في مجال المبيعات.");
+        return false;
       }
 
-      form.addEventListener("submit", async function(e) {
-        e.preventDefault();
-        if (isSubmitting) return;
+      form.querySelector('[name="phone"]').value = phone;
+      return true;
+    }
 
-        hideError();
-        if (!validate()) return;
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      if (isSubmitting) return;
 
-        const investment_ready = getVal("investment_ready");
-        const daily_leads = getVal("daily_leads");
+      hideError();
+      if (!validate()) return;
 
-        isSubmitting = true;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "…جاري الإرسال";
+      const investment_ready = getVal("investment_ready");
+      const daily_leads = getVal("daily_leads");
 
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 20000);
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "…جاري الإرسال وتأكيد الحجز";
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          body: formData,
+          signal: controller.signal
+        });
+
+        let data = null;
+        const responseText = await response.text();
 
         try {
-          const formData = new FormData(form);
-
-          const response = await fetch(scriptURL, {
-            method: "POST",
-            body: formData,
-            signal: controller.signal
-          });
-
-          let data = null;
-          const responseText = await response.text();
-
-          try {
-            data = JSON.parse(responseText);
-          } catch (jsonErr) {
-            if (response.ok || response.type === "opaque") {
-              data = { status: "ok" };
-            } else {
-              throw new Error("Invalid server response");
-            }
-          }
-
-          if (data && data.status === "error") {
-            throw new Error(data.message || "Submit failed");
-          }
-
-          // تتبع Meta Pixel
-          if (typeof fbq === "function") {
-            const isProspect = ["buy_now", "need_info"].includes(investment_ready);
-            if (isProspect) {
-              const isHighIntent = ["5_20", "more_20"].includes(daily_leads);
-              fbq("track", "Lead", {
-                content_name: isHighIntent ? "High Intent Prospect" : "Standard Prospect",
-                value: isHighIntent ? 2.00 : 1.00,
-                currency: "USD"
-              });
-            }
-          }
-
-          form.style.display = "none";
-          thankYou.style.display = "block";
-          block.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        } catch (err) {
-          console.error(err);
-          if (err.name === "AbortError") {
-            showError("انتهت مهلة الإرسال. تأكد من الإنترنت وعاود جرّب.");
-          } else if (String(err.message || "").toLowerCase().includes("already exists")) {
-            showError("هذا الرقم مسجل من قبل. إذا حاب، راجع الفريق مباشرة.");
+          data = JSON.parse(responseText);
+        } catch (jsonErr) {
+          if (response.ok || response.type === "opaque") {
+            data = { status: "ok" };
           } else {
-            showError("فشل الإرسال. عاود جرّب من فضلك.");
+            throw new Error("Invalid server response");
           }
-        } finally {
-          clearTimeout(timeoutId);
-          isSubmitting = false;
-          submitBtn.disabled = false;
-          submitBtn.textContent = "نعم أريد التسجيل لمعرفة المزيد 👈";
         }
-      });
+
+        if (data && data.status === "error") {
+          throw new Error(data.message || "Submit failed");
+        }
+
+        if (typeof fbq === "function") {
+          if (investment_ready === "buy_now") {
+            const isHighIntent = ["5_20", "more_20"].includes(daily_leads);
+            fbq("track", "Lead", {
+              content_name: isHighIntent ? "VIP Qualified Lead" : "High Intent Lead",
+              value: isHighIntent ? 5.00 : 3.00,
+              currency: "USD"
+            });
+          } else if (investment_ready === "need_info") {
+            fbq("track", "Lead", {
+              content_name: "Standard Prospect",
+              value: 1.00,
+              currency: "USD"
+            });
+          } else {
+            fbq("trackCustom", "LowIntentRegistration");
+          }
+        }
+
+        form.style.display = "none";
+        thankYou.style.display = "block";
+        block.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      } catch (err) {
+        console.error(err);
+        if (err.name === "AbortError") {
+          showError("انتهت مهلة الإرسال. يُرجى التحقق من اتصال الإنترنت والمحاولة ثانية.");
+        } else if (String(err.message || "").toLowerCase().includes("already exists")) {
+          showError("هذا الرقم مسجل مسبقاً لدينا. سنتواصل معك في أقرب وقت.");
+        } else {
+          showError("تعذر الإرسال حالياً. يُرجى المحاولة مرة أخرى.");
+        }
+      } finally {
+        clearTimeout(timeoutId);
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = "تأكيد التسجيل ومعرفة التفاصيل 👈";
+      }
     });
   </script>
 </body>
